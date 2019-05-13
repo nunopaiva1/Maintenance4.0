@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: assets/Scenes/login.unity
+    guid: 4d968cf5354bd4a409acd55ccc7e9925
+  - enabled: 1
+    path: assets/Scenes/start.unity
+    guid: 9f9431ddcff56fd428cb39f386696219
+  - enabled: 1
+    path: assets/Scenes/training.unity
+    guid: 89c1893cee045dc4190ba28146913096
+  - enabled: 1
+    path: assets/Scenes/visual.unity
+    guid: 0250a8aa1bf01fb4aa8c6ace69457d84
+  - enabled: 1
+    path: assets/Scenes/exec.unity
+    guid: 8962d2eccc6232c46a47cc175722d1d7
+  - enabled: 1
+    path: assets/Scenes/act-no.unity
+    guid: 2d93d2bbe63ec524b8241ce9eec01629
+  - enabled: 1
+    path: assets/Scenes/TrackMarker.unity
+    guid: 23d2a3dba7704014991d5b979dabd1d2
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: assets/Scenes/pluginTest.unity
+    guid: 153c6e53e238f42babded8b0b8b54482
+  - enabled: 1
+    path: assets/Scenes/act-yes.unity
+    guid: 3ad9f2e7d6b29da40b1dd1f4d7f07e6f
+  - enabled: 1
+    path: assets/Scenes/action.unity
+    guid: cff69d4ffb4745c43b179117ee92e66e
+  - enabled: 1
+    path: assets/Scenes/final.unity
+    guid: 4b9407f5664eaa94baead582dfc9d0c8
+  - enabled: 1
+    path: assets/Scenes/xml.unity
+    guid: 90c49b08fa797f844b318c3d8ad19203
+  - enabled: 1
+    path: assets/Scenes/Dialogue.unity
+    guid: 9c6cbf00260071040b1adfc11f3dceea
+  - enabled: 1
+    path: assets/Scenes/list.unity
+    guid: c6c9adc341c7d2f44bd97ca79de207ed
+  - enabled: 1
+    path: assets/Scenes/start_second.unity
+    guid: e684ab289343f0f479c0a4f2c30be644
+  - enabled: 1
+    path: assets/Scenes/info.unity
+    guid: 4dea55f967bdd2945b7c73b7373a1c17
+  - enabled: 1
+    path: assets/Scenes/procedure2_anim.unity
+    guid: b2d528afd13f849458c90139cb9fd82c
+  m_configObjects: {}

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 21365fd35fe0a744f9407b25d14554df
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - vbBtnObj: {fileID: 1345759659422018, guid: 3788ee5a3ab53304cb123f6f9ad1376b, type: 2}
+  - mark: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
