@@ -1,0 +1,10 @@
+<scenes>
+	<scene name = "MAINTENANCE PROCEDURE">
+		<options>
+			<option>[1] Turn off the machine</option>
+			<option>[2] Check the temperature</option>
+			<option>[3] Optimize it</option>
+			<option>[4] Turn on the machine</option>
+		</options>
+	</scene>
+</scenes>
