@@ -1,2 +1,0 @@
-C:\Users\david\Desktop\Android2D\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
-C:\Users\david\Desktop\Android2D\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
