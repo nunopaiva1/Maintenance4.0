@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_10a1f26" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.16.2">
+  <bpmn:collaboration id="Collaboration_18gqjsu">
+    <bpmn:participant id="Participant_0m961my" name="PROCEDIMENTO MANUTENÇÃO ANUAL - ALIMENTADOR TP100" processRef="Process_1" />
+    <bpmn:participant id="Participant_1tzleip" name="BASE DE DADOS" processRef="Process_14doage" />
+    <bpmn:messageFlow id="MessageFlow_0g7lujd" name="Submeter BD" sourceRef="Participant_0m961my" targetRef="Participant_1tzleip" />
+    <bpmn:messageFlow id="MessageFlow_0ncqr52" sourceRef="EndEvent_13zfhne" targetRef="Participant_1tzleip" />
+    <bpmn:messageFlow id="MessageFlow_0snvy8o" sourceRef="EndEvent_1jo2tac" targetRef="Participant_1tzleip" />
+    <bpmn:messageFlow id="MessageFlow_15b7z9c" sourceRef="EndEvent_042b9wd" targetRef="Participant_1tzleip" />
+    <bpmn:messageFlow id="MessageFlow_1km3r2x" sourceRef="EndEvent_0jtglql" targetRef="Participant_1tzleip" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1" isExecutable="true">
+    <bpmn:sequenceFlow id="SequenceFlow_01vsrlb" sourceRef="StartEvent_1" targetRef="Task_08eldyw" />
+    <bpmn:sequenceFlow id="SequenceFlow_04uib8r" sourceRef="Task_1a46zix" targetRef="Task_0khnv84" />
+    <bpmn:sequenceFlow id="SequenceFlow_1kbbp80" sourceRef="Task_1l5tfdp" targetRef="Task_16r5dc1" />
+    <bpmn:sequenceFlow id="SequenceFlow_0eh4z60" name="Sim" sourceRef="ExclusiveGateway_0fi0swp" targetRef="Task_16r5dc1" />
+    <bpmn:sequenceFlow id="SequenceFlow_12oqc3f" name="Não" sourceRef="ExclusiveGateway_0fi0swp" targetRef="Task_1l5tfdp" />
+    <bpmn:sequenceFlow id="SequenceFlow_05biq23" sourceRef="Task_0f1k9jf" targetRef="ExclusiveGateway_0fi0swp" />
+    <bpmn:sequenceFlow id="SequenceFlow_1jtp46m" sourceRef="Task_0w19bqb" targetRef="Task_0f1k9jf" />
+    <bpmn:sequenceFlow id="SequenceFlow_1bngd5h" name="Sim" sourceRef="ExclusiveGateway_0lx7w2i" targetRef="Task_0f1k9jf" />
+    <bpmn:sequenceFlow id="SequenceFlow_1l2e5kt" name="Não" sourceRef="ExclusiveGateway_0lx7w2i" targetRef="Task_0w19bqb" />
+    <bpmn:sequenceFlow id="SequenceFlow_08nw59s" sourceRef="Task_0h2d0vn" targetRef="ExclusiveGateway_0lx7w2i" />
+    <bpmn:sequenceFlow id="SequenceFlow_013qtbt" sourceRef="Task_0g2twy7" targetRef="Task_0h2d0vn" />
+    <bpmn:sequenceFlow id="SequenceFlow_0towf3k" sourceRef="Task_0w950o5" targetRef="Task_0g2twy7" />
+    <bpmn:sequenceFlow id="SequenceFlow_0sufu92" name="Sim" sourceRef="ExclusiveGateway_0r0dt6c" targetRef="Task_0g2twy7" />
+    <bpmn:sequenceFlow id="SequenceFlow_1rwugvl" name="Não" sourceRef="ExclusiveGateway_0r0dt6c" targetRef="Task_0w950o5" />
+    <bpmn:sequenceFlow id="SequenceFlow_105qjh6" sourceRef="Task_0h27zfa" targetRef="Task_0l4lcnp" />
+    <bpmn:sequenceFlow id="SequenceFlow_0mauawe" sourceRef="Task_1abzecb" targetRef="ExclusiveGateway_0r0dt6c" />
+    <bpmn:sequenceFlow id="SequenceFlow_0qa0gs2" sourceRef="Task_0l4lcnp" targetRef="Task_1abzecb" />
+    <bpmn:sequenceFlow id="SequenceFlow_1jm08i0" name="Sim" sourceRef="ExclusiveGateway_14j280l" targetRef="Task_0l4lcnp" />
+    <bpmn:sequenceFlow id="SequenceFlow_0uchujj" name="Não" sourceRef="ExclusiveGateway_14j280l" targetRef="Task_0h27zfa" />
+    <bpmn:sequenceFlow id="SequenceFlow_1whdbs0" sourceRef="Task_1fw5fro" targetRef="ExclusiveGateway_14j280l" />
+    <bpmn:sequenceFlow id="SequenceFlow_1xc4imp" sourceRef="Task_0zht760" targetRef="Task_1fw5fro" />
+    <bpmn:sequenceFlow id="SequenceFlow_1ierx0p" sourceRef="Task_03iqugp" targetRef="Task_0zht760" />
+    <bpmn:sequenceFlow id="SequenceFlow_09xet8c" sourceRef="Task_0u3o2rb" targetRef="Task_03iqugp" />
+    <bpmn:sequenceFlow id="SequenceFlow_0okz4qg" sourceRef="Task_0bm7zm7" targetRef="Task_0u3o2rb" />
+    <bpmn:sequenceFlow id="SequenceFlow_0xua61g" name="Sim" sourceRef="ExclusiveGateway_0ge12vg" targetRef="Task_0u3o2rb" />
+    <bpmn:sequenceFlow id="SequenceFlow_1k3qhm2" name="Não" sourceRef="ExclusiveGateway_0ge12vg" targetRef="Task_0bm7zm7" />
+    <bpmn:sequenceFlow id="SequenceFlow_0d09id1" sourceRef="Task_1npmw59" targetRef="ExclusiveGateway_0ge12vg" />
+    <bpmn:sequenceFlow id="SequenceFlow_05txqey" sourceRef="Task_0rd5tso" targetRef="Task_1npmw59" />
+    <bpmn:sequenceFlow id="SequenceFlow_0h3lsxc" sourceRef="Task_0u85k5g" targetRef="Task_0rd5tso" />
+    <bpmn:sequenceFlow id="SequenceFlow_14nqkbb" sourceRef="Task_110f7uf" targetRef="Task_0u85k5g" />
+    <bpmn:sequenceFlow id="SequenceFlow_037ivts" sourceRef="Task_1nza9ls" targetRef="Task_110f7uf" />
+    <bpmn:sequenceFlow id="SequenceFlow_1dl646t" sourceRef="Task_0np11ys" targetRef="Task_1nza9ls" />
+    <bpmn:sequenceFlow id="SequenceFlow_0jos13i" sourceRef="Task_1dwku07" targetRef="Task_1o55hjx" />
+    <bpmn:sequenceFlow id="SequenceFlow_0153e05" sourceRef="Task_0z86283" targetRef="Task_04vot83" />
+    <bpmn:sequenceFlow id="SequenceFlow_1d1a1tr" name="Sim" sourceRef="ExclusiveGateway_09b1g65" targetRef="Task_1nza9ls" />
+    <bpmn:sequenceFlow id="SequenceFlow_0o1zzql" name="Não" sourceRef="ExclusiveGateway_09b1g65" targetRef="Task_0np11ys" />
+    <bpmn:sequenceFlow id="SequenceFlow_15ch0xt" sourceRef="Task_1o55hjx" targetRef="ExclusiveGateway_09b1g65" />
+    <bpmn:sequenceFlow id="SequenceFlow_098ootl" name="Sim" sourceRef="ExclusiveGateway_19mmlg4" targetRef="Task_1o55hjx" />
+    <bpmn:sequenceFlow id="SequenceFlow_1c0687o" name="Não" sourceRef="ExclusiveGateway_19mmlg4" targetRef="Task_1dwku07" />
+    <bpmn:sequenceFlow id="SequenceFlow_038qg7e" sourceRef="Task_04vot83" targetRef="ExclusiveGateway_19mmlg4" />
+    <bpmn:sequenceFlow id="SequenceFlow_1ikpu4i" name="Sim" sourceRef="ExclusiveGateway_0h1ylbf" targetRef="Task_04vot83" />
+    <bpmn:sequenceFlow id="SequenceFlow_0py6mox" name="Não" sourceRef="ExclusiveGateway_0h1ylbf" targetRef="Task_0z86283" />
+    <bpmn:sequenceFlow id="SequenceFlow_08mbkep" sourceRef="Task_0ypjcjm" targetRef="ExclusiveGateway_0h1ylbf" />
+    <bpmn:sequenceFlow id="SequenceFlow_0mvf5zb" sourceRef="Task_0f5x7uv" targetRef="Task_0ypjcjm" />
+    <bpmn:sequenceFlow id="SequenceFlow_0olreef" sourceRef="Task_0khnv84" targetRef="Task_0f5x7uv" />
+    <bpmn:sequenceFlow id="SequenceFlow_07l69aa" name="Sim" sourceRef="ExclusiveGateway_0222km6" targetRef="Task_0khnv84" />
+    <bpmn:sequenceFlow id="SequenceFlow_1dsfeh2" name="Não" sourceRef="ExclusiveGateway_0222km6" targetRef="Task_1a46zix" />
+    <bpmn:sequenceFlow id="SequenceFlow_0hplg39" sourceRef="Task_1koz6zk" targetRef="ExclusiveGateway_0222km6" />
+    <bpmn:sequenceFlow id="SequenceFlow_1y54m9u" sourceRef="Task_0dmm310" targetRef="Task_1koz6zk" />
+    <bpmn:sequenceFlow id="SequenceFlow_1h26662" sourceRef="Task_17wy33e" targetRef="Task_0dmm310" />
+    <bpmn:sequenceFlow id="SequenceFlow_09evnqh" sourceRef="Task_1nhwz1g" targetRef="Task_17wy33e" />
+    <bpmn:sequenceFlow id="SequenceFlow_0np5hfh" sourceRef="Task_0v2nw7v" targetRef="Task_1nhwz1g" />
+    <bpmn:sequenceFlow id="SequenceFlow_13rydd6" sourceRef="Task_15wftjw" targetRef="Task_0kppbr5" />
+    <bpmn:sequenceFlow id="SequenceFlow_0d8skau" sourceRef="Task_0kppbr5" targetRef="Task_0v2nw7v" />
+    <bpmn:sequenceFlow id="SequenceFlow_0twt2cg" name="Sim" sourceRef="ExclusiveGateway_1epycwq" targetRef="Task_0kppbr5" />
+    <bpmn:sequenceFlow id="SequenceFlow_0ixih2g" name="Não" sourceRef="ExclusiveGateway_1epycwq" targetRef="Task_15wftjw" />
+    <bpmn:sequenceFlow id="SequenceFlow_1n0neu6" sourceRef="Task_028pfu1" targetRef="ExclusiveGateway_1epycwq" />
+    <bpmn:sequenceFlow id="SequenceFlow_1lhang5" sourceRef="Task_08eldyw" targetRef="Task_028pfu1" />
+    
+    <bpmn:startEvent id="StartEvent_1" name="Início TP115.">
+      <bpmn:outgoing>SequenceFlow_01vsrlb</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_08eldyw" name="Dirigir-se aos dispositivos de segurança.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_08eldyw" name="DocumentType" value="Video" />
+              <camunda:property id="Task_08eldyw" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_08eldyw" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_08eldyw" name="StepCount" value="1" />
+              <camunda:property id="Task_08eldyw" name="Image" value="P1" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_01vsrlb</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1lhang5</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_028pfu1" name="Inspecionar e verificar o bom estado.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_028pfu1" name="DocumentType" value="Video" />
+              <camunda:property id="Task_028pfu1" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_028pfu1" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_028pfu1" name="StepCount" value="2" />
+              <camunda:property id="Task_028pfu1" name="Image" value="P2" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1lhang5</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1n0neu6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_1epycwq">
+      <bpmn:incoming>SequenceFlow_1n0neu6</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0ixih2g</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0twt2cg</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_15wftjw" name="Substituir ou reparar as partes que não estão em condições.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_15wftjw" name="DocumentType" value="Video" />
+              <camunda:property id="Task_15wftjw" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_15wftjw" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_15wftjw" name="StepCount" value="3" />
+              <camunda:property id="Task_15wftjw" name="Image" value="P3" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0ixih2g</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_13rydd6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0kppbr5" name="Tarefa concluída com sucesso.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0kppbr5" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0kppbr5" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0kppbr5" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0kppbr5" name="StepCount" value="4" />
+              <camunda:property id="Task_0kppbr5" name="Image" value="P4" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0twt2cg</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_13rydd6</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0n8uyzh</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0d8skau</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0v2nw7v" name="Dirigir-se aos órgãos mecânicos, elétricos e pneumáticos.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0v2nw7v" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0v2nw7v" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0v2nw7v" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0v2nw7v" name="StepCount" value="5" />
+              <camunda:property id="Task_0v2nw7v" name="Image" value="P5" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0d8skau</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0np5hfh</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1nhwz1g" name="Inspecionar e verificar o bom funcionamento.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_1nhwz1g" name="DocumentType" value="Video" />
+              <camunda:property id="Task_1nhwz1g" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_1nhwz1g" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_1nhwz1g" name="StepCount" value="6" />
+              <camunda:property id="Task_1nhwz1g" name="Image" value="P6" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0np5hfh</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_09evnqh</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_17wy33e" name="Substituir, por prevenção, todos os indicadores luminosos.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_17wy33e" name="DocumentType" value="Video" />
+              <camunda:property id="Task_17wy33e" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_17wy33e" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_17wy33e" name="StepCount" value="7" />
+              <camunda:property id="Task_17wy33e" name="Image" value="P7" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_09evnqh</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1h26662</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0dmm310" name="Apertar os parafusos de fixação de todos os componentes mecânicos.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0dmm310" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0dmm310" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0dmm310" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0dmm310" name="StepCount" value="8" />
+              <camunda:property id="Task_0dmm310" name="Image" value="P8" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1h26662</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1y54m9u</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1koz6zk" name="Verificar o desgaste de todos os componentes sujeitos à lubrificação periódica.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_1koz6zk" name="DocumentType" value="Video" />
+              <camunda:property id="Task_1koz6zk" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_1koz6zk" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_1koz6zk" name="StepCount" value="9" />
+              <camunda:property id="Task_1koz6zk" name="Image" value="P9" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1y54m9u</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0hplg39</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0222km6">
+      <bpmn:incoming>SequenceFlow_0hplg39</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_07l69aa</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1dsfeh2</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_0khnv84" name="Limpar e lubrificar.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0khnv84" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0khnv84" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0khnv84" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0khnv84" name="StepCount" value="10" />
+              <camunda:property id="Task_0khnv84" name="Image" value="P10" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_07l69aa</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_04uib8r</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0olreef</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1a46zix" name="Substituir componentes.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_1a46zix" name="DocumentType" value="Video" />
+              <camunda:property id="Task_1a46zix" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_1a46zix" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_1a46zix" name="StepCount" value="11" />
+              <camunda:property id="Task_1a46zix" name="Image" value="P11" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1dsfeh2</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_04uib8r</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0f5x7uv" name="Verificar as cintas e os seus mecanismos de bloqueio e de estiramento.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0f5x7uv" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0f5x7uv" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0f5x7uv" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0f5x7uv" name="StepCount" value="12" />
+              <camunda:property id="Task_0f5x7uv" name="Image" value="P12" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0olreef</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0mvf5zb</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0ypjcjm" name="Colocá-los íntegros e estirados.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0ypjcjm" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0ypjcjm" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0ypjcjm" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0ypjcjm" name="StepCount" value="13" />
+              <camunda:property id="Task_0ypjcjm" name="Image" value="P13" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0mvf5zb</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_08mbkep</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0z86283" name="Ajustar ou substituir.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0z86283" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0z86283" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0z86283" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0z86283" name="StepCount" value="14" />
+              <camunda:property id="Task_0z86283" name="Image" value="P14" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0py6mox</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0153e05</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0h1ylbf">
+      <bpmn:incoming>SequenceFlow_08mbkep</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0py6mox</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1ikpu4i</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_04vot83" name="Verificar as condições dos componentes do órgão terminal.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_04vot83" name="DocumentType" value="Video" />
+              <camunda:property id="Task_04vot83" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_04vot83" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_04vot83" name="StepCount" value="15" />
+              <camunda:property id="Task_04vot83" name="Image" value="P15" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1ikpu4i</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0153e05</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_038qg7e</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_19mmlg4">
+      <bpmn:incoming>SequenceFlow_038qg7e</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1c0687o</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_098ootl</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_1dwku07" name="Substituir as partes que não estão em condições.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_1dwku07" name="DocumentType" value="Video" />
+              <camunda:property id="Task_1dwku07" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_1dwku07" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_1dwku07" name="StepCount" value="16" />
+              <camunda:property id="Task_1dwku07" name="Image" value="P16" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1c0687o</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0jos13i</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1o55hjx" name="Inspecionar o contacto dos disjuntores.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_1o55hjx" name="DocumentType" value="Video" />
+              <camunda:property id="Task_1o55hjx" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_1o55hjx" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_1o55hjx" name="StepCount" value="17" />
+              <camunda:property id="Task_1o55hjx" name="Image" value="P17" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_098ootl</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0jos13i</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_15ch0xt</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_09b1g65">
+      <bpmn:incoming>SequenceFlow_15ch0xt</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0o1zzql</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1d1a1tr</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_0np11ys" name="Substituir os contactos ou disjuntores.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0np11ys" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0np11ys" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0np11ys" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0np11ys" name="StepCount" value="18" />
+              <camunda:property id="Task_0np11ys" name="Image" value="P18" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0o1zzql</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1dl646t</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1nza9ls" name="Tarefa concluída com sucesso.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_1nza9ls" name="DocumentType" value="Video" />
+              <camunda:property id="Task_1nza9ls" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_1nza9ls" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_1nza9ls" name="StepCount" value="19" />
+              <camunda:property id="Task_1nza9ls" name="Image" value="P19" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1d1a1tr</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1dl646t</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0tevl2z</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_037ivts</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_042b9wd" name="Fim tarefa TP120.">
+      <bpmn:incoming>SequenceFlow_0tevl2z</bpmn:incoming>
+      <bpmn:messageEventDefinition />
+    </bpmn:endEvent>
+    <bpmn:endEvent id="EndEvent_0jtglql" name="Fim tarefa TP115.">
+      <bpmn:incoming>SequenceFlow_0n8uyzh</bpmn:incoming>
+      <bpmn:messageEventDefinition />
+    </bpmn:endEvent>
+    <bpmn:task id="Task_110f7uf" name="No eixo Z, procurar o travão do motor assíncrono.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_110f7uf" name="DocumentType" value="Video" />
+              <camunda:property id="Task_110f7uf" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_110f7uf" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_110f7uf" name="StepCount" value="20" />
+              <camunda:property id="Task_110f7uf" name="Image" value="P20" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_037ivts</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_14nqkbb</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0u85k5g" name="Regular o entreferro.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0u85k5g" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0u85k5g" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0u85k5g" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0u85k5g" name="StepCount" value="21" />
+              <camunda:property id="Task_0u85k5g" name="Image" value="P21" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_14nqkbb</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0h3lsxc</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0rd5tso" name="Verificar se não aumentou de tamanho.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0rd5tso" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0rd5tso" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0rd5tso" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0rd5tso" name="StepCount" value="22" />
+              <camunda:property id="Task_0rd5tso" name="Image" value="P22" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0h3lsxc</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_05txqey</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1npmw59" name="Verificar o eletroíman.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_1npmw59" name="DocumentType" value="Video" />
+              <camunda:property id="Task_1npmw59" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_1npmw59" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_1npmw59" name="StepCount" value="23" />
+              <camunda:property id="Task_1npmw59" name="Image" value="P23" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_05txqey</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0d09id1</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0ge12vg">
+      <bpmn:incoming>SequenceFlow_0d09id1</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0xua61g</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1k3qhm2</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_0u3o2rb" name="Tarefa concluída com sucesso.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0u3o2rb" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0u3o2rb" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0u3o2rb" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0u3o2rb" name="StepCount" value="24" />
+              <camunda:property id="Task_0u3o2rb" name="Image" value="P24" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0xua61g</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0okz4qg</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1nxx4mx</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_09xet8c</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0bm7zm7" name="Reparar ou substituir.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0bm7zm7" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0bm7zm7" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0bm7zm7" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0bm7zm7" name="StepCount" value="25" />
+              <camunda:property id="Task_0bm7zm7" name="Image" value="P25" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1k3qhm2</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0okz4qg</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_1jo2tac" name="Fim tarefa TP125.">
+      <bpmn:incoming>SequenceFlow_1nxx4mx</bpmn:incoming>
+      <bpmn:messageEventDefinition />
+    </bpmn:endEvent>
+    <bpmn:task id="Task_03iqugp" name="Localizar o circuito de proteção equipotencial.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_03iqugp" name="DocumentType" value="Video" />
+              <camunda:property id="Task_03iqugp" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_03iqugp" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_03iqugp" name="StepCount" value="26" />
+              <camunda:property id="Task_03iqugp" name="Image" value="P26" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_09xet8c</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1ierx0p</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0zht760" name="Inspecionar o borne PE.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0zht760" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0zht760" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0zht760" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0zht760" name="StepCount" value="27" />
+              <camunda:property id="Task_0zht760" name="Image" value="P27" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1ierx0p</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1xc4imp</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1fw5fro" name="Verificar se todas as ligações dos condutores de proteção estão apertadas.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_1fw5fro" name="DocumentType" value="Video" />
+              <camunda:property id="Task_1fw5fro" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_1fw5fro" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_1fw5fro" name="StepCount" value="28" />
+              <camunda:property id="Task_1fw5fro" name="Image" value="P28" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1xc4imp</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1whdbs0</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_14j280l">
+      <bpmn:incoming>SequenceFlow_1whdbs0</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1jm08i0</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0uchujj</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_0l4lcnp" name="Inspecionar as partes estruturais condutoras do equipamento elétrico e da máquina.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0l4lcnp" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0l4lcnp" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0l4lcnp" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0l4lcnp" name="StepCount" value="29" />
+              <camunda:property id="Task_0l4lcnp" name="Image" value="P29" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1jm08i0</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_105qjh6</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0qa0gs2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0h27zfa" name="Substituir ligações, condutores ou parafusos.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0h27zfa" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0h27zfa" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0h27zfa" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0h27zfa" name="StepCount" value="30" />
+              <camunda:property id="Task_0h27zfa" name="Image" value="P30" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0uchujj</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_105qjh6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1abzecb" name="Verificar todas as massas do equipamento elétrico e da máquina.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_1abzecb" name="DocumentType" value="Video" />
+              <camunda:property id="Task_1abzecb" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_1abzecb" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_1abzecb" name="StepCount" value="31" />
+              <camunda:property id="Task_1abzecb" name="Image" value="P31" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0qa0gs2</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0mauawe</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0r0dt6c">
+      <bpmn:incoming>SequenceFlow_0mauawe</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0sufu92</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1rwugvl</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_0g2twy7" name="Inspecionar o estado dos condutores das máquinas: amarelos ou verdes.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0g2twy7" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0g2twy7" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0g2twy7" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0g2twy7" name="StepCount" value="32" />
+              <camunda:property id="Task_0g2twy7" name="Image" value="P32" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0sufu92</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0towf3k</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_013qtbt</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0w950o5" name="Substituir massa.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0w950o5" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0w950o5" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0w950o5" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0w950o5" name="StepCount" value="33" />
+              <camunda:property id="Task_0w950o5" name="Image" value="P33" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1rwugvl</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0towf3k</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0h2d0vn" name="Verificar se as ligações com invólucros de alumínio ou ligas de alumínio não estão corroídas.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0h2d0vn" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0h2d0vn" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0h2d0vn" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0h2d0vn" name="StepCount" value="34" />
+              <camunda:property id="Task_0h2d0vn" name="Image" value="P34" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_013qtbt</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_08nw59s</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0lx7w2i">
+      <bpmn:incoming>SequenceFlow_08nw59s</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1bngd5h</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1l2e5kt</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_0f1k9jf" name="Verificar a continuidade do circuito de proteção equipotencial entre o borne PE e os vários pontos.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0f1k9jf" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0f1k9jf" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0f1k9jf" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0f1k9jf" name="StepCount" value="35" />
+              <camunda:property id="Task_0f1k9jf" name="Image" value="P35" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1bngd5h</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1jtp46m</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_05biq23</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0w19bqb" name="Substituir ligações.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_0w19bqb" name="DocumentType" value="Video" />
+              <camunda:property id="Task_0w19bqb" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_0w19bqb" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_0w19bqb" name="StepCount" value="36" />
+              <camunda:property id="Task_0w19bqb" name="Image" value="P36" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1l2e5kt</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1jtp46m</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0fi0swp">
+      <bpmn:incoming>SequenceFlow_05biq23</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0eh4z60</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_12oqc3f</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_16r5dc1" name="Tarefa concluída com sucesso.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_16r5dc1" name="DocumentType" value="Video" />
+              <camunda:property id="Task_16r5dc1" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_16r5dc1" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_16r5dc1" name="StepCount" value="37" />
+              <camunda:property id="Task_16r5dc1" name="Image" value="P37" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0eh4z60</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1kbbp80</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0tyewxe</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1l5tfdp" name="Reparar ou substituir se for necessário.">
+      <bpmn:extensionElements>
+            <camunda:properties>
+              <camunda:property id="Task_1l5tfdp" name="DocumentType" value="Video" />
+              <camunda:property id="Task_1l5tfdp" name="DocumentLink" value="cloudLink" />
+              <camunda:property id="Task_1l5tfdp" name="FeedbackType" value="OK_NOK" />
+              <camunda:property id="Task_1l5tfdp" name="StepCount" value="38" />
+              <camunda:property id="Task_1l5tfdp" name="Image" value="P38" />
+            </camunda:properties>
+          </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_12oqc3f</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1kbbp80</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_13zfhne" name="Fim tarefa TP130.">
+      <bpmn:incoming>SequenceFlow_0tyewxe</bpmn:incoming>
+      <bpmn:messageEventDefinition />
+    </bpmn:endEvent>
+  </bpmn:process>
+  <bpmn:process id="Process_14doage" isExecutable="false">
+    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_0zdb1rl" name="Início da BD.">
+      <bpmn:outgoing>SequenceFlow_0bzgldj</bpmn:outgoing>
+    </bpmn:intermediateThrowEvent>
+    <bpmn:task id="Task_1c09j2q" name="Atualizar Base de Dados.">
+      <bpmn:incoming>SequenceFlow_0bzgldj</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1oyq1aa</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0fjsf4r">
+        <bpmn:targetRef>DataStoreReference_0r4ufwq</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_1g7rn03" name="Fim manutenção.">
+      <bpmn:incoming>SequenceFlow_1oyq1aa</bpmn:incoming>
+      <bpmn:property id="Property_1s4efl3" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_07o5mme">
+        <bpmn:sourceRef>DataStoreReference_0r4ufwq</bpmn:sourceRef>
+        <bpmn:targetRef>Property_1s4efl3</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:endEvent>
+    <bpmn:dataStoreReference id="DataStoreReference_0r4ufwq" />
+    <bpmn:sequenceFlow id="SequenceFlow_1oyq1aa" sourceRef="Task_1c09j2q" targetRef="EndEvent_1g7rn03" />
+    <bpmn:sequenceFlow id="SequenceFlow_0bzgldj" sourceRef="IntermediateThrowEvent_0zdb1rl" targetRef="Task_1c09j2q" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_18gqjsu">
+      <bpmndi:BPMNShape id="Participant_0m961my_di" bpmnElement="Participant_0m961my">
+        <dc:Bounds x="109" y="30" width="2315" height="1305" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="172" y="76" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="159" y="119" width="64" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_08eldyw_di" bpmnElement="Task_08eldyw">
+        <dc:Bounds x="258" y="54" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_01vsrlb_di" bpmnElement="SequenceFlow_01vsrlb">
+        <di:waypoint x="208" y="94" />
+        <di:waypoint x="258" y="94" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_028pfu1_di" bpmnElement="Task_028pfu1">
+        <dc:Bounds x="408" y="54" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1lhang5_di" bpmnElement="SequenceFlow_1lhang5">
+        <di:waypoint x="358" y="94" />
+        <di:waypoint x="408" y="94" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1epycwq_di" bpmnElement="ExclusiveGateway_1epycwq" isMarkerVisible="true">
+        <dc:Bounds x="558" y="69" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1n0neu6_di" bpmnElement="SequenceFlow_1n0neu6">
+        <di:waypoint x="508" y="94" />
+        <di:waypoint x="558" y="94" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_15wftjw_di" bpmnElement="Task_15wftjw">
+        <dc:Bounds x="533" y="179" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ixih2g_di" bpmnElement="SequenceFlow_0ixih2g">
+        <di:waypoint x="583" y="119" />
+        <di:waypoint x="583" y="179" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="588" y="146" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0kppbr5_di" bpmnElement="Task_0kppbr5">
+        <dc:Bounds x="803" y="54" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0twt2cg_di" bpmnElement="SequenceFlow_0twt2cg">
+        <di:waypoint x="608" y="94" />
+        <di:waypoint x="803" y="94" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="618" y="76" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0n8uyzh_di" bpmnElement="SequenceFlow_0n8uyzh">
+        <di:waypoint x="903" y="94" />
+        <di:waypoint x="2333" y="94" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0v2nw7v_di" bpmnElement="Task_0v2nw7v">
+        <dc:Bounds x="258" y="269" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0d8skau_di" bpmnElement="SequenceFlow_0d8skau">
+        <di:waypoint x="873" y="134" />
+        <di:waypoint x="873" y="309" />
+        <di:waypoint x="358" y="309" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_13rydd6_di" bpmnElement="SequenceFlow_13rydd6">
+        <di:waypoint x="633" y="219" />
+        <di:waypoint x="829" y="219" />
+        <di:waypoint x="829" y="134" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1nhwz1g_di" bpmnElement="Task_1nhwz1g">
+        <dc:Bounds x="258" y="391" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0np5hfh_di" bpmnElement="SequenceFlow_0np5hfh">
+        <di:waypoint x="308" y="349" />
+        <di:waypoint x="308" y="391" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_17wy33e_di" bpmnElement="Task_17wy33e">
+        <dc:Bounds x="408" y="391" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_09evnqh_di" bpmnElement="SequenceFlow_09evnqh">
+        <di:waypoint x="358" y="431" />
+        <di:waypoint x="408" y="431" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0dmm310_di" bpmnElement="Task_0dmm310">
+        <dc:Bounds x="558" y="391" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1h26662_di" bpmnElement="SequenceFlow_1h26662">
+        <di:waypoint x="508" y="431" />
+        <di:waypoint x="558" y="431" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1koz6zk_di" bpmnElement="Task_1koz6zk">
+        <dc:Bounds x="708" y="391" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1y54m9u_di" bpmnElement="SequenceFlow_1y54m9u">
+        <di:waypoint x="658" y="431" />
+        <di:waypoint x="708" y="431" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0222km6_di" bpmnElement="ExclusiveGateway_0222km6" isMarkerVisible="true">
+        <dc:Bounds x="896" y="406" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0hplg39_di" bpmnElement="SequenceFlow_0hplg39">
+        <di:waypoint x="808" y="431" />
+        <di:waypoint x="896" y="431" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0khnv84_di" bpmnElement="Task_0khnv84">
+        <dc:Bounds x="1034" y="391" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_07l69aa_di" bpmnElement="SequenceFlow_07l69aa">
+        <di:waypoint x="946" y="431" />
+        <di:waypoint x="1034" y="431" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="981" y="413" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1a46zix_di" bpmnElement="Task_1a46zix">
+        <dc:Bounds x="871" y="526" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1dsfeh2_di" bpmnElement="SequenceFlow_1dsfeh2">
+        <di:waypoint x="921" y="456" />
+        <di:waypoint x="921" y="526" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="926" y="488" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0f5x7uv_di" bpmnElement="Task_0f5x7uv">
+        <dc:Bounds x="1183" y="391" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0olreef_di" bpmnElement="SequenceFlow_0olreef">
+        <di:waypoint x="1134" y="431" />
+        <di:waypoint x="1183" y="431" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0ypjcjm_di" bpmnElement="Task_0ypjcjm">
+        <dc:Bounds x="1330" y="391" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0mvf5zb_di" bpmnElement="SequenceFlow_0mvf5zb">
+        <di:waypoint x="1283" y="431" />
+        <di:waypoint x="1330" y="431" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0h1ylbf_di" bpmnElement="ExclusiveGateway_0h1ylbf" isMarkerVisible="true">
+        <dc:Bounds x="1497" y="406" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_08mbkep_di" bpmnElement="SequenceFlow_08mbkep">
+        <di:waypoint x="1430" y="431" />
+        <di:waypoint x="1497" y="431" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0z86283_di" bpmnElement="Task_0z86283">
+        <dc:Bounds x="1472" y="526" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0py6mox_di" bpmnElement="SequenceFlow_0py6mox">
+        <di:waypoint x="1522" y="456" />
+        <di:waypoint x="1522" y="526" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1527" y="488" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_04vot83_di" bpmnElement="Task_04vot83">
+        <dc:Bounds x="1614" y="391" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1ikpu4i_di" bpmnElement="SequenceFlow_1ikpu4i">
+        <di:waypoint x="1547" y="431" />
+        <di:waypoint x="1614" y="431" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1571" y="413" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_19mmlg4_di" bpmnElement="ExclusiveGateway_19mmlg4" isMarkerVisible="true">
+        <dc:Bounds x="1788" y="406" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_038qg7e_di" bpmnElement="SequenceFlow_038qg7e">
+        <di:waypoint x="1714" y="431" />
+        <di:waypoint x="1788" y="431" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1dwku07_di" bpmnElement="Task_1dwku07">
+        <dc:Bounds x="1763" y="526" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1c0687o_di" bpmnElement="SequenceFlow_1c0687o">
+        <di:waypoint x="1813" y="456" />
+        <di:waypoint x="1813" y="526" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1818" y="488" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1o55hjx_di" bpmnElement="Task_1o55hjx">
+        <dc:Bounds x="1912" y="391" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_098ootl_di" bpmnElement="SequenceFlow_098ootl">
+        <di:waypoint x="1838" y="431" />
+        <di:waypoint x="1912" y="431" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1866" y="413" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_09b1g65_di" bpmnElement="ExclusiveGateway_09b1g65" isMarkerVisible="true">
+        <dc:Bounds x="2069" y="406" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_15ch0xt_di" bpmnElement="SequenceFlow_15ch0xt">
+        <di:waypoint x="2012" y="431" />
+        <di:waypoint x="2069" y="431" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0np11ys_di" bpmnElement="Task_0np11ys">
+        <dc:Bounds x="2044" y="526" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0o1zzql_di" bpmnElement="SequenceFlow_0o1zzql">
+        <di:waypoint x="2094" y="456" />
+        <di:waypoint x="2094" y="526" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2099" y="488" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1nza9ls_di" bpmnElement="Task_1nza9ls">
+        <dc:Bounds x="2176" y="391" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1d1a1tr_di" bpmnElement="SequenceFlow_1d1a1tr">
+        <di:waypoint x="2119" y="431" />
+        <di:waypoint x="2176" y="431" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2138" y="413" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0tevl2z_di" bpmnElement="SequenceFlow_0tevl2z">
+        <di:waypoint x="2276" y="431" />
+        <di:waypoint x="2333" y="431" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0duj3rs_di" bpmnElement="EndEvent_042b9wd">
+        <dc:Bounds x="2333" y="413" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2306" y="389" width="89" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0153e05_di" bpmnElement="SequenceFlow_0153e05">
+        <di:waypoint x="1572" y="566" />
+        <di:waypoint x="1664" y="566" />
+        <di:waypoint x="1664" y="471" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0jos13i_di" bpmnElement="SequenceFlow_0jos13i">
+        <di:waypoint x="1863" y="566" />
+        <di:waypoint x="1962" y="566" />
+        <di:waypoint x="1962" y="471" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1dl646t_di" bpmnElement="SequenceFlow_1dl646t">
+        <di:waypoint x="2144" y="566" />
+        <di:waypoint x="2226" y="566" />
+        <di:waypoint x="2226" y="471" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0joh4s9_di" bpmnElement="EndEvent_0jtglql">
+        <dc:Bounds x="2333" y="76" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2307" y="52" width="88" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_110f7uf_di" bpmnElement="Task_110f7uf">
+        <dc:Bounds x="258" y="636" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_037ivts_di" bpmnElement="SequenceFlow_037ivts">
+        <di:waypoint x="2256" y="471" />
+        <di:waypoint x="2256" y="676" />
+        <di:waypoint x="358" y="676" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0u85k5g_di" bpmnElement="Task_0u85k5g">
+        <dc:Bounds x="258" y="754" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_14nqkbb_di" bpmnElement="SequenceFlow_14nqkbb">
+        <di:waypoint x="308" y="716" />
+        <di:waypoint x="308" y="754" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0rd5tso_di" bpmnElement="Task_0rd5tso">
+        <dc:Bounds x="408" y="754" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0h3lsxc_di" bpmnElement="SequenceFlow_0h3lsxc">
+        <di:waypoint x="358" y="794" />
+        <di:waypoint x="408" y="794" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1npmw59_di" bpmnElement="Task_1npmw59">
+        <dc:Bounds x="558" y="754" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_05txqey_di" bpmnElement="SequenceFlow_05txqey">
+        <di:waypoint x="508" y="794" />
+        <di:waypoint x="558" y="794" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0ge12vg_di" bpmnElement="ExclusiveGateway_0ge12vg" isMarkerVisible="true">
+        <dc:Bounds x="708" y="769" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0d09id1_di" bpmnElement="SequenceFlow_0d09id1">
+        <di:waypoint x="658" y="794" />
+        <di:waypoint x="708" y="794" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0u3o2rb_di" bpmnElement="Task_0u3o2rb">
+        <dc:Bounds x="836" y="754" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0xua61g_di" bpmnElement="SequenceFlow_0xua61g">
+        <di:waypoint x="758" y="794" />
+        <di:waypoint x="836" y="794" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="787" y="776" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0bm7zm7_di" bpmnElement="Task_0bm7zm7">
+        <dc:Bounds x="683" y="878" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1k3qhm2_di" bpmnElement="SequenceFlow_1k3qhm2">
+        <di:waypoint x="733" y="819" />
+        <di:waypoint x="733" y="878" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="738" y="846" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0okz4qg_di" bpmnElement="SequenceFlow_0okz4qg">
+        <di:waypoint x="783" y="918" />
+        <di:waypoint x="875" y="918" />
+        <di:waypoint x="875" y="834" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1nxx4mx_di" bpmnElement="SequenceFlow_1nxx4mx">
+        <di:waypoint x="936" y="794" />
+        <di:waypoint x="2333" y="794" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_11b5av2_di" bpmnElement="EndEvent_1jo2tac">
+        <dc:Bounds x="2333" y="776" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2306" y="752" width="89" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_03iqugp_di" bpmnElement="Task_03iqugp">
+        <dc:Bounds x="258" y="967" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_09xet8c_di" bpmnElement="SequenceFlow_09xet8c">
+        <di:waypoint x="910" y="834" />
+        <di:waypoint x="910" y="1007" />
+        <di:waypoint x="358" y="1007" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0zht760_di" bpmnElement="Task_0zht760">
+        <dc:Bounds x="258" y="1090" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1ierx0p_di" bpmnElement="SequenceFlow_1ierx0p">
+        <di:waypoint x="308" y="1047" />
+        <di:waypoint x="308" y="1090" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1fw5fro_di" bpmnElement="Task_1fw5fro">
+        <dc:Bounds x="408" y="1090" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1xc4imp_di" bpmnElement="SequenceFlow_1xc4imp">
+        <di:waypoint x="358" y="1130" />
+        <di:waypoint x="408" y="1130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_14j280l_di" bpmnElement="ExclusiveGateway_14j280l" isMarkerVisible="true">
+        <dc:Bounds x="558" y="1105" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1whdbs0_di" bpmnElement="SequenceFlow_1whdbs0">
+        <di:waypoint x="508" y="1130" />
+        <di:waypoint x="558" y="1130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0l4lcnp_di" bpmnElement="Task_0l4lcnp">
+        <dc:Bounds x="658" y="1090" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1jm08i0_di" bpmnElement="SequenceFlow_1jm08i0">
+        <di:waypoint x="608" y="1130" />
+        <di:waypoint x="658" y="1130" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="624" y="1112" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1abzecb_di" bpmnElement="Task_1abzecb">
+        <dc:Bounds x="808" y="1090" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0qa0gs2_di" bpmnElement="SequenceFlow_0qa0gs2">
+        <di:waypoint x="758" y="1130" />
+        <di:waypoint x="808" y="1130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0r0dt6c_di" bpmnElement="ExclusiveGateway_0r0dt6c" isMarkerVisible="true">
+        <dc:Bounds x="958" y="1105" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0mauawe_di" bpmnElement="SequenceFlow_0mauawe">
+        <di:waypoint x="908" y="1130" />
+        <di:waypoint x="958" y="1130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0g2twy7_di" bpmnElement="Task_0g2twy7">
+        <dc:Bounds x="1058" y="1090" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0sufu92_di" bpmnElement="SequenceFlow_0sufu92">
+        <di:waypoint x="1008" y="1130" />
+        <di:waypoint x="1058" y="1130" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1024" y="1112" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0h27zfa_di" bpmnElement="Task_0h27zfa">
+        <dc:Bounds x="533" y="1225" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0uchujj_di" bpmnElement="SequenceFlow_0uchujj">
+        <di:waypoint x="583" y="1155" />
+        <di:waypoint x="583" y="1225" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="588" y="1187" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_105qjh6_di" bpmnElement="SequenceFlow_105qjh6">
+        <di:waypoint x="633" y="1265" />
+        <di:waypoint x="708" y="1265" />
+        <di:waypoint x="708" y="1170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0w950o5_di" bpmnElement="Task_0w950o5">
+        <dc:Bounds x="933" y="1225" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1rwugvl_di" bpmnElement="SequenceFlow_1rwugvl">
+        <di:waypoint x="983" y="1155" />
+        <di:waypoint x="983" y="1225" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="988" y="1187" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0towf3k_di" bpmnElement="SequenceFlow_0towf3k">
+        <di:waypoint x="1033" y="1265" />
+        <di:waypoint x="1108" y="1265" />
+        <di:waypoint x="1108" y="1170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0h2d0vn_di" bpmnElement="Task_0h2d0vn">
+        <dc:Bounds x="1208" y="1090" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_013qtbt_di" bpmnElement="SequenceFlow_013qtbt">
+        <di:waypoint x="1158" y="1130" />
+        <di:waypoint x="1208" y="1130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0lx7w2i_di" bpmnElement="ExclusiveGateway_0lx7w2i" isMarkerVisible="true">
+        <dc:Bounds x="1358" y="1105" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_08nw59s_di" bpmnElement="SequenceFlow_08nw59s">
+        <di:waypoint x="1308" y="1130" />
+        <di:waypoint x="1358" y="1130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0f1k9jf_di" bpmnElement="Task_0f1k9jf">
+        <dc:Bounds x="1458" y="1090" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1bngd5h_di" bpmnElement="SequenceFlow_1bngd5h">
+        <di:waypoint x="1408" y="1130" />
+        <di:waypoint x="1458" y="1130" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1424" y="1112" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_0w19bqb_di" bpmnElement="Task_0w19bqb">
+        <dc:Bounds x="1333" y="1225" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1l2e5kt_di" bpmnElement="SequenceFlow_1l2e5kt">
+        <di:waypoint x="1383" y="1155" />
+        <di:waypoint x="1383" y="1225" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1388" y="1187" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1jtp46m_di" bpmnElement="SequenceFlow_1jtp46m">
+        <di:waypoint x="1433" y="1265" />
+        <di:waypoint x="1508" y="1265" />
+        <di:waypoint x="1508" y="1170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0fi0swp_di" bpmnElement="ExclusiveGateway_0fi0swp" isMarkerVisible="true">
+        <dc:Bounds x="1608" y="1105" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_05biq23_di" bpmnElement="SequenceFlow_05biq23">
+        <di:waypoint x="1558" y="1130" />
+        <di:waypoint x="1608" y="1130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_16r5dc1_di" bpmnElement="Task_16r5dc1">
+        <dc:Bounds x="1708" y="1090" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0eh4z60_di" bpmnElement="SequenceFlow_0eh4z60">
+        <di:waypoint x="1658" y="1130" />
+        <di:waypoint x="1708" y="1130" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1674" y="1112" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1l5tfdp_di" bpmnElement="Task_1l5tfdp">
+        <dc:Bounds x="1583" y="1225" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_12oqc3f_di" bpmnElement="SequenceFlow_12oqc3f">
+        <di:waypoint x="1633" y="1155" />
+        <di:waypoint x="1633" y="1225" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1638" y="1187" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1kbbp80_di" bpmnElement="SequenceFlow_1kbbp80">
+        <di:waypoint x="1683" y="1265" />
+        <di:waypoint x="1758" y="1265" />
+        <di:waypoint x="1758" y="1170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0tyewxe_di" bpmnElement="SequenceFlow_0tyewxe">
+        <di:waypoint x="1808" y="1130" />
+        <di:waypoint x="2333" y="1130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1q8sdnc_di" bpmnElement="EndEvent_13zfhne">
+        <dc:Bounds x="2333" y="1112" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2306" y="1088" width="89" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_1tzleip_di" bpmnElement="Participant_1tzleip">
+        <dc:Bounds x="2668" y="1226" width="603" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="MessageFlow_0g7lujd_di" bpmnElement="MessageFlow_0g7lujd">
+        <di:waypoint x="2344" y="1335" />
+        <di:waypoint x="2344" y="1557" />
+        <di:waypoint x="2839" y="1557" />
+        <di:waypoint x="2839" y="1476" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2558" y="1539" width="67" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="IntermediateThrowEvent_0zdb1rl_di" bpmnElement="IntermediateThrowEvent_0zdb1rl">
+        <dc:Bounds x="2731" y="1363" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2718" y="1406" width="63" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1c09j2q_di" bpmnElement="Task_1c09j2q">
+        <dc:Bounds x="2817" y="1341" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0bzgldj_di" bpmnElement="SequenceFlow_0bzgldj">
+        <di:waypoint x="2767" y="1381" />
+        <di:waypoint x="2817" y="1381" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1g7rn03_di" bpmnElement="EndEvent_1g7rn03">
+        <dc:Bounds x="3180" y="1363" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3156" y="1406" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1oyq1aa_di" bpmnElement="SequenceFlow_1oyq1aa">
+        <di:waypoint x="2917" y="1381" />
+        <di:waypoint x="3181" y="1381" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="DataStoreReference_0r4ufwq_di" bpmnElement="DataStoreReference_0r4ufwq">
+        <dc:Bounds x="2997" y="1256" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="DataInputAssociation_07o5mme_di" bpmnElement="DataInputAssociation_07o5mme">
+        <di:waypoint x="3047" y="1295" />
+        <di:waypoint x="3183" y="1372" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0fjsf4r_di" bpmnElement="DataOutputAssociation_0fjsf4r">
+        <di:waypoint x="2917" y="1349" />
+        <di:waypoint x="2997" y="1297" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_0ncqr52_di" bpmnElement="MessageFlow_0ncqr52">
+        <di:waypoint x="2369" y="1130" />
+        <di:waypoint x="2753" y="1130" />
+        <di:waypoint x="2753" y="1226" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_0snvy8o_di" bpmnElement="MessageFlow_0snvy8o">
+        <di:waypoint x="2369" y="794" />
+        <di:waypoint x="2837" y="794" />
+        <di:waypoint x="2837" y="1226" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_15b7z9c_di" bpmnElement="MessageFlow_15b7z9c">
+        <di:waypoint x="2369" y="431" />
+        <di:waypoint x="3080" y="431" />
+        <di:waypoint x="3080" y="1226" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_1km3r2x_di" bpmnElement="MessageFlow_1km3r2x">
+        <di:waypoint x="2369" y="94" />
+        <di:waypoint x="3147" y="94" />
+        <di:waypoint x="3147" y="1226" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_04uib8r_di" bpmnElement="SequenceFlow_04uib8r">
+        <di:waypoint x="971" y="566" />
+        <di:waypoint x="1084" y="566" />
+        <di:waypoint x="1084" y="471" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
