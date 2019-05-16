@@ -1,17 +1,13 @@
 Android
 PlayerPath?
-C:/Users/ECGM/Desktop/Projetos/Android2D_viana_v2/MaintenanceApp_v1.1.apk
+C:/Users/ECGM/Desktop/Projetos/Android2D_viana_v2/MaintenanceApp_v1.3.apk
 SceneListBegin?
 assets/Scenes/login.unity
 assets/Scenes/start.unity
 assets/Scenes/training.unity
 assets/Scenes/visual.unity
-assets/Scenes/exec.unity
-assets/Scenes/act-no.unity
 assets/Scenes/TrackMarker.unity
 assets/Scenes/pluginTest.unity
-assets/Scenes/act-yes.unity
-assets/Scenes/action.unity
 assets/Scenes/final.unity
 assets/Scenes/xml.unity
 assets/Scenes/Dialogue.unity
@@ -19,6 +15,8 @@ assets/Scenes/list.unity
 assets/Scenes/start_second.unity
 assets/Scenes/info.unity
 assets/Scenes/procedure2_anim.unity
+assets/Scenes/imtargetTest.unity
+assets/Scenes/MediaGallery.unity
 SceneListEnd?
 71bb6a6b6c8f052f948db64c7dd3ca4f VuforiaScripts.dll:.BoundingBoxRenderer
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -382,3 +380,4 @@ cd67f3e1e9ccac6db86c1564cea5a827 Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+4b98172aaadc5bafb899bf052880200a Assembly-CSharp.dll:.GetButton

@@ -18,26 +18,11 @@ EditorBuildSettings:
     path: assets/Scenes/visual.unity
     guid: 0250a8aa1bf01fb4aa8c6ace69457d84
   - enabled: 1
-    path: assets/Scenes/exec.unity
-    guid: 8962d2eccc6232c46a47cc175722d1d7
-  - enabled: 1
-    path: assets/Scenes/act-no.unity
-    guid: 2d93d2bbe63ec524b8241ce9eec01629
-  - enabled: 1
     path: assets/Scenes/TrackMarker.unity
     guid: 23d2a3dba7704014991d5b979dabd1d2
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: assets/Scenes/pluginTest.unity
     guid: 153c6e53e238f42babded8b0b8b54482
-  - enabled: 1
-    path: assets/Scenes/act-yes.unity
-    guid: 3ad9f2e7d6b29da40b1dd1f4d7f07e6f
-  - enabled: 1
-    path: assets/Scenes/action.unity
-    guid: cff69d4ffb4745c43b179117ee92e66e
   - enabled: 1
     path: assets/Scenes/final.unity
     guid: 4b9407f5664eaa94baead582dfc9d0c8
@@ -59,4 +44,10 @@ EditorBuildSettings:
   - enabled: 1
     path: assets/Scenes/procedure2_anim.unity
     guid: b2d528afd13f849458c90139cb9fd82c
+  - enabled: 1
+    path: assets/Scenes/imtargetTest.unity
+    guid: 419ce0bd12a30444a8193d62ce7265f8
+  - enabled: 1
+    path: assets/Scenes/MediaGallery.unity
+    guid: 25664c13f7930d74ea18d5e2ab06cfd4
   m_configObjects: {}
