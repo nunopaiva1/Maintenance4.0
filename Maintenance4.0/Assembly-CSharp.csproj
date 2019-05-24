@@ -98,6 +98,7 @@
     <Compile Include="assets\Script\DialogueManager_procedureAnim.cs" />
     <Compile Include="assets\Script\DialogueTrigger.cs" />
     <Compile Include="assets\Script\GameManager.cs" />
+    <Compile Include="assets\Script\GetButton.cs" />
     <Compile Include="assets\Script\Manager.cs" />
     <Compile Include="assets\Script\MenuScript.cs" />
     <Compile Include="assets\Script\PluginTest.cs" />
