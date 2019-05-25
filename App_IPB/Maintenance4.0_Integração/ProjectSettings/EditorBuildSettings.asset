@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: assets/Scenes/FirstPage.unity
+    guid: a2c811480d3e39f4b96dedcdd9298c19
+  - enabled: 1
+    path: assets/Scenes/login.unity
+    guid: 4d968cf5354bd4a409acd55ccc7e9925
+  - enabled: 1
+    path: assets/Scenes/start.unity
+    guid: 9f9431ddcff56fd428cb39f386696219
+  - enabled: 1
+    path: assets/Scenes/training.unity
+    guid: 89c1893cee045dc4190ba28146913096
+  - enabled: 1
+    path: assets/Scenes/Procedimentos.unity
+    guid: 4cc5f6cc5e49b7d4f829ea9bf581c8b0
+  - enabled: 1
+    path: assets/Scenes/final.unity
+    guid: 4b9407f5664eaa94baead582dfc9d0c8
+  - enabled: 1
+    path: assets/Scenes/Dialogue.unity
+    guid: 9c6cbf00260071040b1adfc11f3dceea
+  - enabled: 1
+    path: assets/Scenes/list.unity
+    guid: c6c9adc341c7d2f44bd97ca79de207ed
+  - enabled: 1
+    path: assets/Scenes/Galeria.unity
+    guid: f507e461d09739e4bba3cfcf61d6060e
+  - enabled: 1
+    path: assets/Scenes/GaleriaTTM n.unity
+    guid: 5d698b365e3184f43bc09e854576c2ef
+  - enabled: 1
+    path: assets/Scenes/start_second.unity
+    guid: 1cabcf41e5ff6ac478d0a2c81fbb77a9
+  - enabled: 1
+    path: assets/Scenes/info.unity
+    guid: 4dea55f967bdd2945b7c73b7373a1c17
+  - enabled: 1
+    path: assets/Scenes/procedure2_anim.unity
+    guid: b2d528afd13f849458c90139cb9fd82c
+  - enabled: 1
+    path: assets/Scenes/imtargetTest.unity
+    guid: 419ce0bd12a30444a8193d62ce7265f8
+  - enabled: 1
+    path: assets/Scenes/MediaGallery.unity
+    guid: 25664c13f7930d74ea18d5e2ab06cfd4
+  m_configObjects: {}
