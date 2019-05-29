@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/david/Desktop/Maintenance4.0-IPVC/Maintenance4.0/d.apk
+C:/Users/david/Desktop/Maintenance4.0_Integração/d.apk
 SceneListBegin?
 assets/Scenes/FirstPage.unity
 assets/Scenes/login.unity
@@ -10,14 +10,18 @@ assets/Scenes/Procedimentos.unity
 assets/Scenes/final.unity
 assets/Scenes/Dialogue.unity
 assets/Scenes/list.unity
+assets/Scenes/Galeria.unity
+assets/Scenes/GaleriaTTM n.unity
 assets/Scenes/start_second.unity
 assets/Scenes/info.unity
 assets/Scenes/procedure2_anim.unity
 assets/Scenes/imtargetTest.unity
 assets/Scenes/MediaGallery.unity
 SceneListEnd?
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:PubNubExample.Example
 71bb6a6b6c8f052f948db64c7dd3ca4f VuforiaScripts.dll:.BoundingBoxRenderer
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
+88fdb7249f604a8836a6e2dc7ad9ea9c Assembly-CSharp.dll:.DataManager
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -70,6 +74,7 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 802a424ac08903d2ef6354eb36552e49 Assembly-CSharp.dll:Lean.Touch.LeanFingerSet
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:Lean.Touch.LeanTouchEvents
 98ad81e9f689a492509f07e75b810aaa Unity.TextMeshPro.dll:TMPro.TMP_InputField
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:PubNubAPI.QueueManager
 3360e813f97475fc774bb7069473a853 Assembly-CSharp.dll:Lean.Touch.LeanSelect
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -144,6 +149,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 692c9047893e5d16bcf4a906f61df4ae Assembly-CSharp.dll:.popUpScript
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.LoadingCircle
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 f7ec42960b338a310d17fc8ff41f76cb Assembly-CSharp.dll:.Manager
 a318a82d5abde553e75543c7b3aba918 XiaomiSupport.dll:AppStoresSupport.AppStoreSettings
@@ -218,6 +224,7 @@ ffd8816d88b11c11d24af998cf7f948a Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 80048d754efbd771a38c1c044412c959 Assembly-CSharp.dll:.Inspection
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:PubNubAPI.PNLatencyManager
 a73cc7e0d8575dd7105e0f0616a7253a Assembly-CSharp.dll:Lean.Touch.LeanOpenUrl
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 a32b3b81f3e005d590710545b6d043bf Assembly-CSharp.dll:Lean.Touch.LeanRotate
@@ -240,9 +247,11 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 a38cfd2ed44b0845811d250ea572900e Assembly-CSharp.dll:.buttonClickLogin
+7db0d89c099f17b32979476be9d60543 Assembly-CSharp.dll:.SendMessage
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 57e1077da17ce131f08bac81a876637a Unity.XR.WindowsMR.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 ef4eed9cf61f5457c8d431087bd4829d Assembly-CSharp.dll:Lean.Touch.LeanTouch
+054c11ebe7357ca64685056210b17e5a Assembly-CSharp.dll:PubNubAPI.PNUnityWebRequest
 cd4c68f4b5233ea4a3895266373d0b85 Assembly-CSharp.dll:.GameManager
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -294,12 +303,14 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 2d34b230893e97395ad3bcd6c8e75065 Assembly-CSharp.dll:.DialogueManager
 9277194e3007f91c41cc4dd392ebc5cb Assembly-CSharp.dll:Lean.Touch.LeanSelectableSpriteRendererColor
 e802b4b7eea51c0d03f1a7d0b36e094d Assembly-CSharp.dll:Lean.Touch.LeanFingerTap
+a2e5334632e0b469af0bf50350924e87 Assembly-CSharp.dll:.GaleriaABA
 1832b55d33c4287ae3b30b88bad098a3 Assembly-CSharp.dll:Lean.Touch.LeanCameraZoom
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 8da9c3f273c67d847f2f67efa9a9a5c8 Assembly-CSharp.dll:Lean.Touch.LeanFingerTrail
 9277194e3007f91c41cc4dd392ebc5cb Assembly-CSharp.dll:Lean.Touch.LeanSelectableGraphicColor
 afa0d13b710ea73b6e3fdb349904f7db Assembly-CSharp.dll:Lean.Touch.LeanTranslate
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.RotateCube
+40dc0858dd1cb2045faeed23d4731f9a Assembly-CSharp.dll:.GaleriaTTM
 37eedbe172a703ac5f0797076add2b78 Assembly-CSharp.dll:Lean.Touch.LeanFingerUp
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient

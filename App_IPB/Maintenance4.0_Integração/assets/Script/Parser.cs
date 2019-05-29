@@ -75,7 +75,7 @@ public class Parser : MonoBehaviour
             string MyConnection2 = "datasource=193.136.195.23;port=3306;username=IPA;password=cedri#2018";
             //This is my insert query in which i am taking input from the user through windows forms  
             string Query = "UPDATE catraport.Procedimento" +
-                " SET Id= '" + ID1 + "', Data= '" + date + "', HoraInício ='" + time + "'" +
+                " SET Id= '" + ID1 + "', Data= '" + date + "', HoraInício ='" + time + "', Procedimento = '" + filename + "'" +
                 " WHERE utilizador = '" + nome + "';";
             //string Query = "insert into catraport.Procedimento(Id, Data, HoraInício) values('" + ID1 + "','" + date + "','" + time + "');";
             //This is  MySqlConnection here i have created the object and pass my connection string.  

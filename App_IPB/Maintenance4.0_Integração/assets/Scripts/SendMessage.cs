@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PubNubAPI;
 using UnityEngine.UI;
+using System;
 
 public class JSONInformation
 {
@@ -22,9 +23,9 @@ public class SendMessage : MonoBehaviour {
     public int indexcounter = 0;
     public Text deleteText;
     public Text moveTextUpwards;
-    private TextMesh text;
+    //private TextMesh text;
     string username = "";
-    public GameObject panel;
+    //public GameObject panel;
 
     // Create a chat message queue so we can interate through all the messages
     Queue<GameObject> chatMessageQueue = new Queue<GameObject>();
@@ -34,15 +35,31 @@ public class SendMessage : MonoBehaviour {
         username = PlayerPrefs.GetString("nome");
         // Use this for initialization
         PNConfiguration pnConfiguration = new PNConfiguration();
-        pnConfiguration.PublishKey = "pub-c-7f1da7be-daa3-4333-a4f9-d530b9b2d6d2";
-        pnConfiguration.SubscribeKey = "sub-c-2a796e96-7d62-11e9-912a-e2e853b4b660";
+        pnConfiguration.PublishKey = "pub-c-55502794-ad2e-46c0-9ca5-fcc766f21db1";
+        pnConfiguration.SubscribeKey = "sub-c-35bf9022-806f-11e9-8b01-daac65ed15f3";
+        pnConfiguration.SecretKey = "sec-c-NjRiMTliZGQtZDViNC00ZjFjLTgwZmYtNTk5ODQ4ZTE5ZGZh";
         pnConfiguration.LogVerbosity = PNLogVerbosity.BODY;
         pnConfiguration.UUID = System.Guid.NewGuid().ToString();
         pubnub = new PubNub(pnConfiguration);
-
+        
         // Add Listener to Submit button to send messages
         Button btn = SubmitButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+
+        pubnub.DeleteMessages()
+    .Channel("chatchannel3")
+    .Async((result, status) => {
+        if (!status.Error)
+        {
+            Debug.Log(string.Format("DateTime {0}, In DeleteMessages Example, Timetoken: {1}", DateTime.UtcNow, result.Message));
+        }
+        else
+        {
+            Debug.Log(status.Error);
+            Debug.Log(status.StatusCode);
+            Debug.Log(status.ErrorData.Info);
+        }
+    });
 
         // Fetch the last 13 messages sent on the given PubNub channel
         pubnub.FetchMessages()
@@ -63,6 +80,7 @@ public class SendMessage : MonoBehaviour {
                 {
                     foreach (PNMessageResult pnMessageResult in kvp.Value)
                     {
+                            Debug.Log("inside foreach");
                         // Format data into readable format
                         JSONInformation chatmessage = JsonUtility.FromJson<JSONInformation>(pnMessageResult.Payload.ToString());
 
@@ -70,9 +88,9 @@ public class SendMessage : MonoBehaviour {
                         CreateChat(chatmessage);
 
                         // Counter used for positioning the text UI 
-                        if (counter != 650)
+                        if (counter <= 0)
                         {
-                            counter += 50;
+                            counter += 100;
                         }
                     }
                  }
@@ -91,8 +109,10 @@ public class SendMessage : MonoBehaviour {
         pubnub.SusbcribeCallback += (sender, e) =>
         {
             SusbcribeEventEventArgs message = e as SusbcribeEventEventArgs;
+            Debug.Log(message.MessageResult);
             if (message.MessageResult != null)
             {
+                Debug.Log("Before Sync");
                 // Format data into a readable format
                 JSONInformation chatmessage = JsonUtility.FromJson<JSONInformation>(message.MessageResult.Payload.ToString());
 
@@ -102,10 +122,22 @@ public class SendMessage : MonoBehaviour {
                 // When a new chat is created, remove the first chat and transform all the messages on the page up
                 SyncChat();
 
+                
                 // Counter used for position the text UI
-                if (counter != 650)
+                if (counter <= 0)
                 {
-                    counter += 50;
+                    counter += 100;
+                }
+
+                if (indexcounter > 1)
+                {
+                    foreach (GameObject moveChat in chatMessageQueue)
+                    {
+                        Debug.Log("Moving text");
+                        RectTransform moveText = moveChat.GetComponent<RectTransform>();
+                        moveText.offsetMax = new Vector2(moveText.offsetMax.x, moveText.offsetMax.y + 100);
+                        moveText.sizeDelta = new Vector2(1875, 75);
+                    }
                 }
             }
         };
@@ -119,34 +151,20 @@ public class SendMessage : MonoBehaviour {
 
         // Create a new gameobject that will display text of the data sent via PubNub
         GameObject chatMessage = new GameObject(currentObject);
-        chatMessage.transform.SetParent(canvasObject.transform);
-        chatMessage.AddComponent<TextMesh>().text = currentObject;
+        chatMessage.transform.SetParent(canvasObject.GetComponent<Canvas>().transform);
+        chatMessage.AddComponent<Text>().text = currentObject;
 
         // Assign text to the gameobject. Add visual properties to text
-        //var chatText = chatMessage.GetComponent<Text>();
-        //chatText.font = customFont;
-        //chatText.color = Color.black;
-        //chatText.fontSize = 7;
-
-        //chatText.alignment = TextAnchor.LowerLeft;
+        var chatText = chatMessage.GetComponent<Text>();
+        chatText.font = customFont;
+        chatText.color = Color.black;
+        chatText.fontSize = 50;
 
         // Assign a RectTransform to gameobject to maniuplate positioning of chat.
-        var chatText = chatMessage.GetComponent<TextMesh>();
         RectTransform rectTransform;
         rectTransform = chatText.GetComponent<RectTransform>();
-        rectTransform.localPosition = new Vector2(0, -400 - counter); // 0 -400
-        rectTransform.sizeDelta = new Vector2(125, 11); //15 1
-     // rectTransform.localScale -= new Vector3(15, 15, 15);
-
-        MeshRenderer mesh;
-        mesh = chatText.GetComponent<MeshRenderer>();
-        TextMesh mesh1;
-        mesh1 = chatText.GetComponent<TextMesh>();
-        mesh1.font = customFont;
-        mesh1.fontSize = 30;
-        
-       
-        //rectTransform.rotation = Quaternion.Euler(0, 0, 180);
+        rectTransform.localPosition = new Vector2(0, -400 - counter); 
+        rectTransform.sizeDelta = new Vector2(1875, 75); //15 1
 
         // Assign the gameobject to the queue of chatmessages
         chatMessageQueue.Enqueue(chatMessage);
@@ -162,14 +180,18 @@ public class SendMessage : MonoBehaviour {
             // Delete the first gameobject in the queue
             GameObject deleteChat = chatMessageQueue.Dequeue();
             Destroy(deleteChat);
+            Debug.Log(chatMessageQueue);
 
             // Move all existing text gameobjects up the Y axis 50 pixels
             foreach (GameObject moveChat in chatMessageQueue)
             {
+                Debug.Log("Moving text");
                 RectTransform moveText = moveChat.GetComponent<RectTransform>();
-                moveText.offsetMax = new Vector2(moveText.offsetMax.x, moveText.offsetMax.y + 50);
+                moveText.offsetMax = new Vector2(moveText.offsetMax.x, moveText.offsetMax.y + 100);
+                moveText.sizeDelta = new Vector2(1875, 75);
             }
         }
+        
     }
 
 	// Update is called once per frame
