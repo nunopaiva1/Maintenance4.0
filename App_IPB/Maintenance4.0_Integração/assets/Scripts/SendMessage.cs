@@ -35,9 +35,9 @@ public class SendMessage : MonoBehaviour {
         username = PlayerPrefs.GetString("nome");
         // Use this for initialization
         PNConfiguration pnConfiguration = new PNConfiguration();
-        pnConfiguration.PublishKey = "pub-c-55502794-ad2e-46c0-9ca5-fcc766f21db1";
-        pnConfiguration.SubscribeKey = "sub-c-35bf9022-806f-11e9-8b01-daac65ed15f3";
-        pnConfiguration.SecretKey = "sec-c-NjRiMTliZGQtZDViNC00ZjFjLTgwZmYtNTk5ODQ4ZTE5ZGZh";
+        pnConfiguration.PublishKey = "pub-c-d3de4341-37e0-453b-b416-b099a148de7a";
+        pnConfiguration.SubscribeKey = "sub-c-56be17da-8218-11e9-abf5-3aee3d8b0253";
+        pnConfiguration.SecretKey = "sec-c-NzM3OGZkMDgtZTgxOS00NTYyLWJiZTQtZDNiZWI2NWVlZDEx";
         pnConfiguration.LogVerbosity = PNLogVerbosity.BODY;
         pnConfiguration.UUID = System.Guid.NewGuid().ToString();
         pubnub = new PubNub(pnConfiguration);
@@ -46,20 +46,7 @@ public class SendMessage : MonoBehaviour {
         Button btn = SubmitButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
 
-        pubnub.DeleteMessages()
-    .Channel("chatchannel3")
-    .Async((result, status) => {
-        if (!status.Error)
-        {
-            Debug.Log(string.Format("DateTime {0}, In DeleteMessages Example, Timetoken: {1}", DateTime.UtcNow, result.Message));
-        }
-        else
-        {
-            Debug.Log(status.Error);
-            Debug.Log(status.StatusCode);
-            Debug.Log(status.ErrorData.Info);
-        }
-    });
+        
 
         // Fetch the last 13 messages sent on the given PubNub channel
         pubnub.FetchMessages()
@@ -195,9 +182,22 @@ public class SendMessage : MonoBehaviour {
     }
 
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	public void DeleteMessages () {
+        pubnub.DeleteMessages()
+    .Channel("chatchannel3")
+    .Async((result, status) => {
+        if (!status.Error)
+        {
+            Debug.Log(string.Format("DateTime {0}, In DeleteMessages Example, Timetoken: {1}", DateTime.UtcNow, result.Message));
+        }
+        else
+        {
+            Debug.Log(status.Error);
+            Debug.Log(status.StatusCode);
+            Debug.Log(status.ErrorData.Info);
+        }
+    });
+    }
 
     void TaskOnClick()
     {

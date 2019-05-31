@@ -74,7 +74,6 @@
      <Compile Include="assets\PubNub\Editor\UtilityTests.cs" />
      <Compile Include="assets\PubNub\Editor\WhereNowBuildRequestsTests.cs" />
      <None Include="assets\editor\vuforia\VuforiaMars_ModelTarget\authoringinfo.xml" />
-     <None Include="assets\editor\vuforia\M4\authoringinfo.xml" />
      <None Include="assets\editor\vuforia\VuforiaMars_VuMark\authoringinfo.xml" />
      <None Include="assets\editor\vuforia\Emulator\VuforiaEmulator.xml" />
      <None Include="assets\editor\vuforia\TargetsetData\VuforiaMars_Object_info.xml" />

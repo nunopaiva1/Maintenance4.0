@@ -486,7 +486,8 @@ public class Parser : MonoBehaviour
                 try
                 {
                     string time1 = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
-                    SceneManager.LoadScene("final", LoadSceneMode.Additive);
+                    //SceneManager.LoadScene("final", LoadSceneMode.Additive);
+                    Application.LoadLevel("final");
                     string MyConnection2 = "datasource=193.136.195.23;port=3306;username=IPA;password=cedri#2018";
                     //This is my insert query in which i am taking input from the user through windows forms  
                     //string Query = "INSERT INTO catraport.Procedimento(utilizador, Data, HoraInício, HoraFim, StepCount) VALUES('" + putsomething + "','" + date + "','" + starttime + "','" + endtime + "','" + step + "');";

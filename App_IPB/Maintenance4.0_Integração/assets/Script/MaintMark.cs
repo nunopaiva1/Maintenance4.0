@@ -107,7 +107,7 @@ public class MaintMark : MonoBehaviour, ITrackableEventHandler
         int stripHeight = (int)(buttonStrip.rect.height * parentCanvas.scaleFactor + 0.5f);
         webPanel.gameObject.SetActive(true);
         close.gameObject.SetActive(true);
-        OpenWebView("http://192.168.217.179:1880/ui/#/0", stripHeight);
+        OpenWebView("http://192.168.217.179:1880/ui/#!/4", stripHeight);
     }
 
 
