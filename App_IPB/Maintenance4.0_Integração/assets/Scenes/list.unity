@@ -182,7 +182,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Alimentador Bi-Anual
+  m_Text: Alimentador_Bi_Anual
 --- !u!222 &11374025
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 500
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1280, y: 800}
+  m_ReferenceResolution: {x: 1920, y: 1200}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1611,7 +1611,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mesas Mensal
+  m_Text: Mesas_Mensal
 --- !u!222 &446692099
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1805,8 +1805,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -44.900024}
-  m_SizeDelta: {x: 0, y: 89.8}
+  m_AnchoredPosition: {x: 0, y: -138}
+  m_SizeDelta: {x: 0, y: 159.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &640096236
 MonoBehaviour:
@@ -1830,7 +1830,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: fd0dd50bbe7f5b84f914d4ba683b1a4c, type: 3}
-    m_FontSize: 50
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -2117,7 +2117,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 157477255}
   m_HandleRect: {fileID: 157477254}
   m_Direction: 2
-  m_Value: 0.42156506
+  m_Value: 1
   m_Size: 0.36904538
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2264,7 +2264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 647.1, y: -564.1}
+  m_AnchoredPosition: {x: 965.04, y: -767.45}
   m_SizeDelta: {x: 1647.4, y: 787.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &982661134
@@ -2734,8 +2734,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.012549999, y: -341.99997}
-  m_SizeDelta: {x: 1280, y: 121.8}
+  m_AnchoredPosition: {x: 0, y: -424.5}
+  m_SizeDelta: {x: 1280, y: 158.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1250193107
 MonoBehaviour:
@@ -2843,6 +2843,7 @@ GameObject:
   - component: {fileID: 1266200689}
   - component: {fileID: 1266200690}
   - component: {fileID: 1266200691}
+  - component: {fileID: 1266200692}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2981,6 +2982,20 @@ MonoBehaviour:
   TCA: {fileID: 217619077}
   TCM: {fileID: 326467917}
   TTPM: {fileID: 1136412968}
+--- !u!114 &1266200692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266200683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7cf62f2995fd940be8ea3d0cf1f974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 8085008935461319271, guid: 12ca9e3541df0fc40aa646e393467172, type: 3}
+  content: {fileID: 2070575720}
 --- !u!1 &1317098832
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,18 +3287,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: fd0dd50bbe7f5b84f914d4ba683b1a4c, type: 3}
-    m_FontSize: 62
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 90
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <<Retroceder
+  m_Text: <<Voltar
 --- !u!222 &1436558704
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4250,7 +4265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 764.35, y: -288}
+  m_AnchoredPosition: {x: 764.35, y: -1066.3999}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070575722

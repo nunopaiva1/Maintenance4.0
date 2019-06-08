@@ -1,28 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class GaleriaABA : MonoBehaviour {
-
     public GameObject PopUp;
     public RawImage image;
-
+    public Texture[] gallery;
     public Texture Imagem;
     public Button Seguinte; //Button to view next image
     public Button Anterior; //Button to view previous image
     public VideoClip videoClip;
     private VideoPlayer videoPlayer;
+    private int i = 0;
 
     public void BtnNext()
-    {            
-        image.texture = Imagem;
+    {
+        Destroy(videoPlayer);
+        if (i < gallery.Length)
+        {
+            i++;
+
+            if (i == gallery.Length) SceneManager.LoadScene("final");
+        }
+        //image.texture = Imagem;
+        
     }
 
     public void BtnPrev()
     {
-        StartCoroutine(Video());
+        if (i > 1)
+        {
+            i--;
+        }
+        else
+        {
+            StartCoroutine(Video());
+        }
     }
 
 
@@ -60,4 +76,10 @@ public class GaleriaABA : MonoBehaviour {
         //play video and sound
         videoPlayer.Play();
     }
+
+    void Update()
+    {
+        image.texture = gallery[i];
+    }
+
 }

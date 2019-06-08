@@ -10,4 +10,9 @@ public class MenuScript : MonoBehaviour {
         Application.LoadLevel(sceaneName);
     }
 
+    public void QuitApp()
+    {
+        Application.Quit();
+    }
+
 }

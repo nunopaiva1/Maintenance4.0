@@ -7,9 +7,10 @@ using UnityEngine.UI;
 
 public class DataManager : MonoBehaviour
 {
-    public Text nomeOperador, nomeTarefa, duracao;
+    public Text nomeOperador, nomeTarefa, duracao, cont;
     string result = "";
     string date = "";
+    string count = "";
 
     List<string> datalist = new List<string>();
     //Data current;
@@ -19,8 +20,8 @@ public class DataManager : MonoBehaviour
 
         string MyConnection2 = "datasource=193.136.195.23;port=3306;username=IPA;password=cedri#2018";
         //This is my insert query in which i am taking input from the user through windows forms  
-        string Query = "SELECT Procedimento, Data  FROM catraport.Procedimento WHERE utilizador = '" + SendNameDB.username + "' and Procedimento is not NULL and Data is not NULL; ";
-        //string Query = "insert into catraport.Procedimento(Id, Data, HoraInício) values('" + ID1 + "','" + date + "','" + time + "');";
+        //string Query = "SELECT Procedimento, Data  FROM catraport.Procedimento WHERE utilizador = '" + SendNameDB.username + "' and Procedimento is not NULL and Data is not NULL; ";
+        string Query = "SELECT Procedimento, Data,COUNT(*) as count FROM catraport.Procedimento where utilizador = '" + SendNameDB.username + "' and Procedimento is not NULL and Data is not NULL GROUP BY Procedimento, Data ORDER BY count DESC;";
         //This is  MySqlConnection here i have created the object and pass my connection string.  
         MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
         //This is command class which will handle the query and connection object.  
@@ -34,17 +35,23 @@ public class DataManager : MonoBehaviour
             //{
                 result = Convert.ToString(reader[0]);
                 date = Convert.ToString(reader[1]);
-                //string date = reader.GetString(1);
-                Debug.Log("proc = " + result);
-                Debug.Log("date = " + date);
-            string[] procedu = { result, date };
+                count = Convert.ToString(reader[2]);
+            //string date = reader.GetString(1);
+            Debug.Log("proc = " + result);
+            Debug.Log("date = " + date);
+            Debug.Log("count = " + count);
 
-            datalist.AddRange(procedu);
+            nomeTarefa.text = "Tarefa: " + result + "\n";
+            duracao.text = "Data: " + date;
+            cont.text = "Número de vezes realizado: " + count;
+            //string[] procedu = { result, date };
 
-            foreach (string proc in datalist)
-            {
-                nomeTarefa.text = "Tarefa: " + proc+"\n";
-            }
+            //datalist.AddRange(procedu);
+
+            //foreach (string proc in datalist)
+            //{
+            //    nomeTarefa.text = "Tarefa: " + proc+"\n";
+            //}
             //duracao.text = "Data: " + date;
             //}
         }

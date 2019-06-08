@@ -2,26 +2,26 @@ Android
 PlayerPath?
 C:/Users/david/Desktop/Maintenance4.0_Integração/d.apk
 SceneListBegin?
+assets/Scenes/App Launcher.unity
 assets/Scenes/FirstPage.unity
 assets/Scenes/login.unity
 assets/Scenes/start.unity
 assets/Scenes/training.unity
 assets/Scenes/Procedimentos.unity
 assets/Scenes/final.unity
-assets/Scenes/Dialogue.unity
 assets/Scenes/list.unity
 assets/Scenes/Galeria.unity
 assets/Scenes/GaleriaTTM n.unity
+assets/Scenes/Galeriateste.unity
 assets/Scenes/start_second.unity
 assets/Scenes/info.unity
-assets/Scenes/procedure2_anim.unity
 assets/Scenes/imtargetTest.unity
 assets/Scenes/MediaGallery.unity
 SceneListEnd?
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:PubNubExample.Example
 71bb6a6b6c8f052f948db64c7dd3ca4f VuforiaScripts.dll:.BoundingBoxRenderer
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
-88fdb7249f604a8836a6e2dc7ad9ea9c Assembly-CSharp.dll:.DataManager
+78debef8832c6512344851e9e7bc5ac8 Assembly-CSharp.dll:.DataManager
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -144,6 +144,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 4b98172aaadc5bafb899bf052880200a Assembly-CSharp.dll:.GetButton
 71bb6a6b6c8f052f948db64c7dd3ca4f VuforiaScripts.dll:.DefaultInitializationErrorHandler
 6c1ab29ddfcd6014cccb0aadc55da469 Assembly-CSharp.dll:Lean.Touch.LeanPlane
+0a7ffa955620ebde4b8d5ea847a4be95 Assembly-CSharp.dll:.App
 17ac82beb4f998a95da5edff431f5d0f Assembly-CSharp.dll:Lean.Touch.LeanFingerSwipe
 1b4fd049ced306fe9660f4ccfcc7b15a Assembly-CSharp.dll:.SendNameDB
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
@@ -303,8 +304,9 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 2d34b230893e97395ad3bcd6c8e75065 Assembly-CSharp.dll:.DialogueManager
 9277194e3007f91c41cc4dd392ebc5cb Assembly-CSharp.dll:Lean.Touch.LeanSelectableSpriteRendererColor
 e802b4b7eea51c0d03f1a7d0b36e094d Assembly-CSharp.dll:Lean.Touch.LeanFingerTap
-a2e5334632e0b469af0bf50350924e87 Assembly-CSharp.dll:.GaleriaABA
+e4ee3f18bb2ccb9b51e8c8c25a4c8178 Assembly-CSharp.dll:.GaleriaABA
 1832b55d33c4287ae3b30b88bad098a3 Assembly-CSharp.dll:Lean.Touch.LeanCameraZoom
+262677271feb985ef6228e5506110505 Assembly-CSharp.dll:.Parsetest
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 8da9c3f273c67d847f2f67efa9a9a5c8 Assembly-CSharp.dll:Lean.Touch.LeanFingerTrail
 9277194e3007f91c41cc4dd392ebc5cb Assembly-CSharp.dll:Lean.Touch.LeanSelectableGraphicColor
@@ -353,6 +355,7 @@ ffd8816d88b11c11d24af998cf7f948a Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+7b3affbd850237d30a45e07b013857e6 Assembly-CSharp.dll:.Addbuttons
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TrackMarker
 d290aa5e69b93e2bde3fddd91d219f4f Assembly-CSharp.dll:Lean.Touch.LeanFingerHeld
 330f62fcfa21b2047340eab154927cfc Assembly-CSharp.dll:Lean.Touch.LeanSelectableRendererColor

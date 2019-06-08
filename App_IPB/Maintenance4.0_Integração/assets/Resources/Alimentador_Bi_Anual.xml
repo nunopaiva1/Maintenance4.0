@@ -63,29 +63,16 @@
     <bpmn:sequenceFlow id="SequenceFlow_10d9mvb" name="Sim" sourceRef="ExclusiveGateway_0x71y9o" targetRef="Task_05ylu82" />
     <bpmn:sequenceFlow id="SequenceFlow_0zzyct9" name="Não" sourceRef="ExclusiveGateway_0x71y9o" targetRef="Task_1ulrb7c" />
     <bpmn:sequenceFlow id="SequenceFlow_0b9yx2u" sourceRef="Task_1ulrb7c" targetRef="Task_05ylu82" />
-    <bpmn:task id="Task_0a4bv9k" name="Novo escalonamento.">
-      <bpmn:extensionElements>
-            <camunda:properties>
-              <camunda:property id="Task_0a4bv9k" name="DocumentType" value="Video" />
-              <camunda:property id="Task_0a4bv9k" name="DocumentLink" value="cloudLink" />
-              <camunda:property id="Task_0a4bv9k" name="FeedbackType" value="OK_NOK" />
-              <camunda:property id="Task_0a4bv9k" name="StepCount" value="5" />
-              <camunda:property id="Task_0a4bv9k" name="Image" value="P4" />
-            </camunda:properties>
-          </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_0l71vw5</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0zb1rm1</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:task id="Task_048ra6d" name="Tarefa concluída com sucesso.">
       <bpmn:extensionElements>
             <camunda:properties>
               <camunda:property id="Task_048ra6d" name="DocumentType" value="Video" />
               <camunda:property id="Task_048ra6d" name="DocumentLink" value="cloudLink" />
               <camunda:property id="Task_048ra6d" name="FeedbackType" value="OK_NOK" />
-              <camunda:property id="Task_048ra6d" name="StepCount" value="6" />
+              <camunda:property id="Task_048ra6d" name="StepCount" value="5" />
             </camunda:properties>
           </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_0zb1rm1</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0l71vw5</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_10j07wk</bpmn:outgoing>
     </bpmn:task>
     <bpmn:task id="Task_1ulrb7c" name="Substituir componentes.">
@@ -95,7 +82,7 @@
               <camunda:property id="Task_1ulrb7c" name="DocumentLink" value="cloudLink" />
               <camunda:property id="Task_1ulrb7c" name="FeedbackType" value="OK_NOK" />
               <camunda:property id="Task_1ulrb7c" name="StepCount" value="4" />
-              <camunda:property id="Task_1ulrb7c" name="Image" value="P5" />
+              <camunda:property id="Task_1ulrb7c" name="Image" value="P4" />
             </camunda:properties>
           </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_0zzyct9</bpmn:incoming>
@@ -105,8 +92,7 @@
       <bpmn:incoming>SequenceFlow_10j07wk</bpmn:incoming>
       <bpmn:messageEventDefinition />
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_0l71vw5" sourceRef="Task_05ylu82" targetRef="Task_0a4bv9k" />
-    <bpmn:sequenceFlow id="SequenceFlow_0zb1rm1" sourceRef="Task_0a4bv9k" targetRef="Task_048ra6d" />
+    <bpmn:sequenceFlow id="SequenceFlow_0zb1rm1" sourceRef="Task_05ylu82" targetRef="Task_048ra6d" />
     <bpmn:sequenceFlow id="SequenceFlow_10j07wk" sourceRef="Task_048ra6d" targetRef="EndEvent_0wcqkgm" />
   </bpmn:process>
   <bpmn:process id="Process_0qa8bpj" isExecutable="false" />

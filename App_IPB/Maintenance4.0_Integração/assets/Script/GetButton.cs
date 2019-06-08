@@ -28,9 +28,10 @@ public class GetButton : MonoBehaviour {
     }
     public void onDisable()
     {
-        click = EventSystem.current.currentSelectedGameObject.name;
+        //click = EventSystem.current.currentSelectedGameObject.name;
+        click = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text;
         PlayerPrefs.SetString("filename", click+".xml");
-        Debug.Log(click);
+        Debug.Log("clic: "+click);
     }
     // Update is called once per frame
     void Update () {
