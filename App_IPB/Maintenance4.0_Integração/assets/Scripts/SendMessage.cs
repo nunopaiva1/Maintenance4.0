@@ -11,7 +11,8 @@ public class JSONInformation
     public string text;
 }
 
-public class SendMessage : MonoBehaviour {
+public class SendMessage : MonoBehaviour
+{
     public static PubNub pubnub;
     public Font customFont;
     public Button SubmitButton;
@@ -29,24 +30,24 @@ public class SendMessage : MonoBehaviour {
 
     // Create a chat message queue so we can interate through all the messages
     Queue<GameObject> chatMessageQueue = new Queue<GameObject>();
-   
+
     void Start()
     {
         username = PlayerPrefs.GetString("nome");
         // Use this for initialization
         PNConfiguration pnConfiguration = new PNConfiguration();
-        pnConfiguration.PublishKey = "pub-c-d3de4341-37e0-453b-b416-b099a148de7a";
-        pnConfiguration.SubscribeKey = "sub-c-56be17da-8218-11e9-abf5-3aee3d8b0253";
-        pnConfiguration.SecretKey = "sec-c-NzM3OGZkMDgtZTgxOS00NTYyLWJiZTQtZDNiZWI2NWVlZDEx";
+        pnConfiguration.PublishKey = "pub-c-5eab1256-061d-4cbc-a12a-1db2975e9521";
+        pnConfiguration.SubscribeKey = "sub-c-e3616564-8c38-11e9-90d9-8a9dabba299e";
+        pnConfiguration.SecretKey = "sec-c-YjMwY2E0MDEtOWM0Ny00Y2IxLWI1N2ItNzhkNDIxZDMxNDYy";
         pnConfiguration.LogVerbosity = PNLogVerbosity.BODY;
         pnConfiguration.UUID = System.Guid.NewGuid().ToString();
         pubnub = new PubNub(pnConfiguration);
-        
+
         // Add Listener to Submit button to send messages
         Button btn = SubmitButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+        Debug.Log(pnConfiguration.UUID);
 
-        
 
         // Fetch the last 13 messages sent on the given PubNub channel
         pubnub.FetchMessages()
@@ -54,35 +55,35 @@ public class SendMessage : MonoBehaviour {
             .Count(13)
             .Async((result, status) =>
             {
-            if (status.Error)
-            {
-                Debug.Log(string.Format(
-                    " FetchMessages Error: {0} {1} {2}", 
-                    status.StatusCode, status.ErrorData, status.Category
-                ));
-            }
-            else
-            {
-                foreach (KeyValuePair<string, List<PNMessageResult>> kvp in result.Channels)
+                if (status.Error)
                 {
-                    foreach (PNMessageResult pnMessageResult in kvp.Value)
+                    Debug.Log(string.Format(
+                        " FetchMessages Error: {0} {1} {2}",
+                        status.StatusCode, status.ErrorData, status.Category
+                    ));
+                }
+                else
+                {
+                    foreach (KeyValuePair<string, List<PNMessageResult>> kvp in result.Channels)
                     {
-                            Debug.Log("inside foreach");
-                        // Format data into readable format
-                        JSONInformation chatmessage = JsonUtility.FromJson<JSONInformation>(pnMessageResult.Payload.ToString());
-
-                        // Call the function to display the message in plain text
-                        CreateChat(chatmessage);
-
-                        // Counter used for positioning the text UI 
-                        if (counter <= 0)
+                        foreach (PNMessageResult pnMessageResult in kvp.Value)
                         {
-                            counter += 100;
+                            Debug.Log("inside foreach");
+                            // Format data into readable format
+                            JSONInformation chatmessage = JsonUtility.FromJson<JSONInformation>(pnMessageResult.Payload.ToString());
+
+                            // Call the function to display the message in plain text
+                            CreateChat(chatmessage);
+
+                            // Counter used for positioning the text UI 
+                            if (counter <= 0)
+                            {
+                                counter += 100;
+                            }
                         }
                     }
-                 }
-             }
-             });
+                }
+            });
 
         // Subscribe to a PubNub channel to receive messages when they are sent on that channel
         pubnub.Subscribe()
@@ -109,7 +110,7 @@ public class SendMessage : MonoBehaviour {
                 // When a new chat is created, remove the first chat and transform all the messages on the page up
                 SyncChat();
 
-                
+
                 // Counter used for position the text UI
                 if (counter <= 0)
                 {
@@ -131,7 +132,8 @@ public class SendMessage : MonoBehaviour {
     }
 
     // Function used to create new chat objects based of the data received from PubNub
-    void CreateChat(JSONInformation payLoad){
+    void CreateChat(JSONInformation payLoad)
+    {
 
         // Create a string with the username and text
         string currentObject = string.Concat(payLoad.username, payLoad.text);
@@ -150,8 +152,9 @@ public class SendMessage : MonoBehaviour {
         // Assign a RectTransform to gameobject to maniuplate positioning of chat.
         RectTransform rectTransform;
         rectTransform = chatText.GetComponent<RectTransform>();
-        rectTransform.localPosition = new Vector2(0, -400 - counter); 
+        rectTransform.localPosition = new Vector2(0, -400 - counter);
         rectTransform.sizeDelta = new Vector2(1875, 75); //15 1
+        rectTransform.localScale = new Vector2(1, 1);
 
         // Assign the gameobject to the queue of chatmessages
         chatMessageQueue.Enqueue(chatMessage);
@@ -160,7 +163,8 @@ public class SendMessage : MonoBehaviour {
         indexcounter++;
     }
 
-    void SyncChat() {
+    void SyncChat()
+    {
         // If more 13 objects are on the screen, we need to start removing them
         if (indexcounter >= 14)
         {
@@ -178,11 +182,12 @@ public class SendMessage : MonoBehaviour {
                 moveText.sizeDelta = new Vector2(1875, 75);
             }
         }
-        
+
     }
 
-	// Update is called once per frame
-	public void DeleteMessages () {
+    // Update is called once per frame
+    public void DeleteMessages()
+    {
         pubnub.DeleteMessages()
     .Channel("chatchannel3")
     .Async((result, status) => {

@@ -74,9 +74,9 @@ public class Parser : MonoBehaviour
             //Aqui introduzimos a informação do ID, data e hora de inicio na mesma linha onde está o nome do utilizador 
             string MyConnection2 = "datasource=193.136.195.23;port=3306;username=IPA;password=cedri#2018";
             //This is my insert query in which i am taking input from the user through windows forms  
-            string Query = "UPDATE catraport.Procedimento" +
-                " SET Id= '" + ID1 + "', Data= '" + date + "', HoraInício ='" + time + "', Procedimento = '" + filename + "'" +
-                " WHERE utilizador = '" + nome + "';";
+            string Query = "INSERT INTO catraport.Procedimento(utilizador, Id, Data, HoraInício, Procedimento) VALUES('" + nome + "', '" + ID1 + "', '" + date + "', '" + time + "', '" + filename + "');";
+            //string Query = "insert into catraport.Procedimento" +
+                //" VALUES utilizador= '"+ nome +"' Id= '" + ID1 + "', Data= '" + date + "', HoraInício ='" + time + "', Procedimento = '" + filename + "');";
             //string Query = "insert into catraport.Procedimento(Id, Data, HoraInício) values('" + ID1 + "','" + date + "','" + time + "');";
             //This is  MySqlConnection here i have created the object and pass my connection string.  
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);

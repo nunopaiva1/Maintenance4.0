@@ -33,240 +33,240 @@ public class SendNameDB : MonoBehaviour {
     
 	public void Id1() {
         string st = "Mário Fernandes";
-        database(st);
+        //database(st);
     }
 
     public void Id2()
     {
         string st = "Carlos Teixeira";
-        database(st);
+        //database(st);
     }
         public void Id3()
     {
         string st = "João Pedro Teixeira";
-        database(st);
+        //database(st);
     }
 
     public void Id4()
     {
         string st = "Bruno Águeda";
-        database(st);
+        //database(st);
     }
 
     public void Id5()
     {
         string st = "André Eiras";
-        database(st);
+        //database(st);
     }
 
     public void Id6()
     {
         string st = "Henrique Dias Fim";
-        database(st);
+        //database(st);
     }
 
     public void Id7()
     {
         string st = "João Sobrinho Teixeira";
-        database(st);
+        //database(st);
     }
 
     public void Id8()
     {
         string st = "Ricardo Oliveira";
-        database(st);
+       // database(st);
     }
 
     public void Id9()
     {
         string st = "Gonçalo Afonso";
-        database(st);
+       // database(st);
     }
 
     public void Id10()
     {
         string st = "Nuno Garcia";
-        database(st);
+       // database(st);
     }
 
     public void Id11()
     {
         string st = "Rui Gonçalves";
-        database(st);
+        //database(st);
     }
 
     public void Id12()
     {
         string st = "Ruben Brito";
-        database(st);
+        //database(st);
     }
 
     public void Id13()
     {
         string st = "Nuno Paulo";
-        database(st);
+        //database(st);
     }
 
     public void Id14()
     {
         string st = "Sílvia Rodrigues";
-        database(st);
+        //database(st);
     }
 
     public void Id15()
     {
         string st = "José Amaral";
-        database(st);
+        //database(st);
     }
 
     public void Id16()
     {
         string st = "José Gonçalves";
-        database(st);
+        //database(st);
     }
 
     public void Id17()
     {
         string st = "Cláudia Águeda";
-        database(st);
+        //database(st);
     }
 
     public void Id18()
     {
         string st = "Diana Cidre";
-        database(st);
+        //database(st);
     }
 
     public void Id19()
     {
         string st = "Ana Fidalgo";
-        database(st);
+        //database(st);
     }
 
     public void Id20()
     {
         string st = "Sandra Marcelino";
-        database(st);
+        //database(st);
     }
 
     public void Id21()
     {
         string st = "Adelaide Pinto";
-        database(st);
+       // database(st);
     }
 
     public void Id22()
     {
         string st = "Vitor Campos";
-        database(st);
+        //database(st);
     }
 
     public void Id23()
     {
         string st = "Manuela Silva";
-        database(st);
+        //database(st);
     }
 
     public void Id24()
     {
         string st = "Daniela Domingues";
-        database(st);
+        //database(st);
     }
 
     public void Id25()
     {
         string st = "Vanessa Cordeiro";
-        database(st);
+        //database(st);
     }
 
     public void Id26()
     {
         string st = "Susete Almeida";
-        database(st);
+        //database(st);
     }
 
     public void Id27()
     {
         string st = "Marlena Gomes";
-        database(st);
+        //database(st);
     }
 
     public void Id28()
     {
         string st = "Pedro Pipa";
-        database(st);
+        //database(st);
     }
 
     public void Id29()
     {
         string st = "Tiago Rodrigo";
-        database(st);
+        //database(st);
     }
 
     public void Id30()
     {
         string st = "Valter Apolinário";
-        database(st);
+       // database(st);
     }
 
     public void Id31()
     {
         string st = "Tiago Pardelinha";
-        database(st);
+        //database(st);
     }
 
     public void Id32()
     {
         string st = "Ana Isabel Fernandes";
-        database(st);
+       // database(st);
     }
 
     public void Id33()
     {
         string st = "David Batista";
-        database(st);
+        //database(st);
     }
 
     public void Id34()
     {
         string st = "Elisabete Rodrigues";
-        database(st);
+        //database(st);
     }
 
     public void Id35()
     {
         string st = "Francisco Bessa";
-        database(st);
+        //database(st);
     }
 
     public void Id36()
     {
         string st = "José Antas";
-        database(st);
+        //database(st);
     }
 
     public void Id37()
     {
         string st = "Tânia Brás";
-        database(st);
+        //database(st);
     }
 
     public void Id38()
     {
         string st = "Zélia Fernandes";
-        database(st);
+        //database(st);
     }
 
     public void Id39()
     {
         string st = "Paula Remondes";
-        database(st);
+        //database(st);
     }
 
     public void Id40()
     {
         string st = "Dália Teixeira";
-        database(st);
+        //database(st);
     }
     
 
@@ -287,6 +287,7 @@ public class SendNameDB : MonoBehaviour {
             MyCommand2.ExecuteNonQuery();
             MyConn2.Close();
             PlayerPrefs.SetString("name", st);
+            Debug.Log(st);
         }
         catch
         {

@@ -7,12 +7,13 @@ using UnityEngine.UI;
 
 public class DataManager : MonoBehaviour
 {
-    public Text nomeOperador, nomeTarefa, duracao, cont;
+    public Text nomeOperador;
+    public Text nomeTarefa;
     string result = "";
     string date = "";
     string count = "";
 
-    List<string> datalist = new List<string>();
+    List<Data> datalist = new List<Data>();
     //Data current;
     private void Start()
     {
@@ -30,30 +31,31 @@ public class DataManager : MonoBehaviour
         MySqlDataReader reader = MyCommand2.ExecuteReader();
         while (reader.Read())
         {
-           // Debug.Log("inside while");
-            //if (result != "" || date != "")
-            //{
-                result = Convert.ToString(reader[0]);
-                date = Convert.ToString(reader[1]);
-                count = Convert.ToString(reader[2]);
-            //string date = reader.GetString(1);
-            Debug.Log("proc = " + result);
-            Debug.Log("date = " + date);
-            Debug.Log("count = " + count);
+            result = Convert.ToString(reader[0]);
+            date = Convert.ToString(reader[1]);
+            count = Convert.ToString(reader[2]);
+            datalist.Add(new Data(result, date, count));
 
-            nomeTarefa.text = "Tarefa: " + result + "\n";
-            duracao.text = "Data: " + date;
-            cont.text = "Número de vezes realizado: " + count;
-            //string[] procedu = { result, date };
+                foreach (Data data in datalist)
+                {
+                    Debug.Log("Tarefa: " + data.result + "\n" + "Data: " + data.date + "\n" + "Número de repetições: " + data.count);
+                //for (int i = 0; i <= datalist.Count; i++)
+                //{
+                    
+                    nomeTarefa.text = "Tarefa: " + data.result + "\n" + "Data: " + data.date + "\n" + "Número de repetições: " + data.count;
+                    Debug.Log(nomeTarefa.text);
+                //}
+                }
 
-            //datalist.AddRange(procedu);
 
-            //foreach (string proc in datalist)
-            //{
-            //    nomeTarefa.text = "Tarefa: " + proc+"\n";
-            //}
+            ////string date = reader.GetString(1);
+            //Debug.Log("proc = " + result);
+            //Debug.Log("date = " + date);
+            //Debug.Log("count = " + count);
+
+            //nomeTarefa.text = "Tarefa: " + result + "\n";
             //duracao.text = "Data: " + date;
-            //}
+            //cont.text = "Número de vezes realizado: " + count;
         }
         //MyCommand2.ExecuteNonQuery();
         MyConn2.Close();
@@ -70,17 +72,19 @@ public class DataManager : MonoBehaviour
     //    return (null);
     //}
 
-    //public class Data
-    //{
-    //    public string proc;
-    //    public string dat;
-        
+    public class Data
+    {
+        public string result;
+        public string date;
+        public string count;
 
-    //    public Data(string proc, string dat)
-    //    {
-    //        this.proc = proc;
-    //        this.dat = dat;
-    //    }
 
-    //}
+        public Data(string result, string date, string count)
+        {
+            this.result = result;
+            this.date = date;
+            this.count = count;
+        }
+
+    }
 }
